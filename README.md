@@ -1,1 +1,3 @@
 # ceododa
+
+remove ^(\s)*$\n
