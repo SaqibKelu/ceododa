@@ -16,20 +16,22 @@
     <link rel="stylesheet" href="css\bootstrap-icons.css">
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <link rel="stylesheet" href="css\ceo-style.css">
+    
     <!-- JAVASCRIPT FILES -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/click-scroll.js"></script>
-    <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
-        integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ 
 </head>
+
+
 <body>
     <div id="headercontent"></div>
     <div id="navmenu"></div>
+    
+    
     <!--carousel-->
     <main>
         <section class="hero-section hero-section-full-height">
@@ -64,15 +66,19 @@
             </div>
         </section>
         <!--carousel ends-->
+        
+        
         <!--Whats New Section-->
-        <section class="section-padding" id="section_3">
-            <div class="container">
+        <section class="section-padding">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12 col-12 text-center mb-4">
+                    <div class="col-lg-12 col-12 text-center">
                         <h2>What's New</h2>
                     </div>
+                    
+                    
                     <!--notification tab-->
-                    <div class="col-lg-12 col-md-12 col-12 mb-12 mb-lg-0">
+                    <div class="col-lg-6 col-md-6 col-12 mb-12 mb-lg-0">
                         <div class="custom-block-wrap">
                             <div class="custom-block">
                                 <div class="custom-block-body">
@@ -93,8 +99,10 @@
                         </div>
                     </div>
                     <!--notification tab ends-->
+                   
+                   
                     <!--orders tab-->
-                    <div class="col-lg-12 col-md-12 col-12 mb-12 mb-lg-0">
+                    <div class="col-lg-6 col-md-6 col-12 mb-12 mb-lg-0">
                         <div class="custom-block-wrap">
                             <div class="custom-block">
                                 <div class="custom-block-body">
@@ -120,8 +128,8 @@
         </section>
         <!--Whats New Section Ends-->
         <!--stories section-->
-        <section class="section-padding section-bg" id="section_3">
-            <div class="container">
+        <section class="section-padding section-bg">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-12 text-center mb-4">
                         <h2>Featured Stories</h2>
@@ -169,18 +177,33 @@
             </div>
         </section>
         <!--stories section ends-->
+
+        <!--info section-->
+        <div id="infosec"></div>
+      
+        <!--info section ends-->
+
+
         <!--sarkari logos-->
+    
+        
      
         
         <!--sarkari logos end-->
     </main>
     <div id="footcontent"></div>
+    
 </body>
+
 <script type="text/javascript">
     $('#headercontent').load('headcontent.html');
     $('#navmenu').load('navmenu.html');
-
+    $('#infosec').load('info.html');
     $('#footcontent').load('footcontent.html');
-   
-</script>
+    </script>
+    <script>
+        
+    </script>
+
+
 </html>
