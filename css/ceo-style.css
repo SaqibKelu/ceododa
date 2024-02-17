@@ -221,17 +221,6 @@ strong {
 }
 
 
-/*---------------------------------------
-  PROGRESS BAR               
------------------------------------------*/
-.progress {
-  background: var(--border-color);
-  height: 5px;
-}
-
-.progress-bar {
-  background: var(--secondary-color);
-}
 
 
 /*---------------------------------------
@@ -626,8 +615,9 @@ strong {
 .featured-block {
   text-align: center;
   transition: all 0.5s ease;
-  min-height: 256px;
-  padding: 15px;
+  min-height: auto;
+  padding: 10px;
+ 
 }
 
 .featured-block:hover {
@@ -1311,7 +1301,7 @@ blockquote::before {
   FOOTER MENU               
 -----------------------------------------*/
 .footer-menu {
-  column-count: 2;
+  column-count: 3;
   margin: 0;
   padding: 0;
 }
@@ -1322,12 +1312,15 @@ blockquote::before {
 }
 
 .footer-menu-link {
-  font-size: var(--p-font-size);
+  font-size: var(--menu-font-size);
+  font-weight: var(--font-weight-medium);
   color: var(--dark-color);
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
   margin-bottom: 10px;
+  margin-left: 30px;
+  
 }
 
 
