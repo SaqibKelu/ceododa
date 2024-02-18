@@ -100,6 +100,7 @@ h6 {
   letter-spacing: -1px;
 }
 
+
 h1 {
   font-size: var(--h1-font-size);
   font-weight: var(--font-weight-bold);
@@ -124,6 +125,17 @@ h5 {
   color: var(--primary-color);
   font-size: var(--h5-font-size);
 }
+
+th{
+  color: var(--primary-color);
+  font-size: 16px;
+}
+.title_o
+{
+  color: var(--primary-color);
+}
+
+
 
 h6 {
   font-size: var(--h6-font-size);
