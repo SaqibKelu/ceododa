@@ -714,16 +714,6 @@ strong {
   overflow: hidden;
 }
 
-.volunteer-section::after {
-  content: "";
-  background: var(--primary-color);
-  border-radius: 50%;
-  position: absolute;
-  bottom: -110px;
-  right: -80px;
-  width: 350px;
-  height: 350px;
-}
 
 .volunteer-form {
   background: var(--white-color);
@@ -776,7 +766,7 @@ strong {
   NEWS         
 -----------------------------------------*/
 .news-detail-header-section {
-  background-image: url('../images/news/close-up-volunteer-oganizing-stuff-donation.jpg');
+  background-image: url('images\profile.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -937,28 +927,10 @@ blockquote::before {
   text-align: center;
 }
 
-.testimonial-section::before {
-  content: "";
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  position: absolute;
-  top: -100px;
-  left: -30px;
-  margin: auto;
-  width: 250px;
-  height: 250px;
-}
 
-.testimonial-section::after {
-  content: "";
-  background: var(--custom-btn-bg-color);
-  border-radius: 50%;
-  position: absolute;
-  bottom: -110px;
-  right: -80px;
-  width: 350px;
-  height: 350px;
-}
+
+
+
 
 #testimonial-carousel .carousel-caption {
   position: relative;
@@ -1037,7 +1009,7 @@ blockquote::before {
 
 #testimonial-carousel .carousel-indicators li,
 #testimonial-carousel .carousel-indicators li::before {
-  width: 45px;
+  width: 100px;
   height: 45px; 
 }
 
