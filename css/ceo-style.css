@@ -1283,7 +1283,7 @@ blockquote::before {
 }
 
 .social-icon-link {
-  background: var(--site-footer-dark-color);
+  background:gray;
   border-radius: var(--border-radius-large);
   color: var(--white-color);
   font-size: var(--copyright-font-size);
@@ -1631,10 +1631,7 @@ blockquote::before {
   /**tables**/
  
   
-  .thumbnail-img {
-    max-width: 50px;
-    max-height: 50px;
-  }
+  
   
   @media (max-width: 576px) {
     .table-responsive {
@@ -1647,10 +1644,5 @@ blockquote::before {
     }
   }
 
-  @media (max-width: 576px) {
-    
-    td {
-      overflow-wrap: break-all;
-    }
-  }
+ 
   
