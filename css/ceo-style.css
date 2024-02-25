@@ -290,7 +290,7 @@ strong {
 
 
 /*---------------------------------------
-  AVATAR IMAGE - TESTIMONIAL, AUTHOR               
+  AVATAR IMAGE              
 -----------------------------------------*/
 .avatar-image {
   border-radius: var(--border-radius-large);
@@ -682,27 +682,7 @@ strong {
 }
 
 
-/*---------------------------------------
-  COUNTER NUMBERS              
------------------------------------------*/
-.counter-thumb {
-  margin: 20px;
-  margin-bottom: 0;
-}
 
-.counter-number,
-.counter-text {
-  color: var(--secondary-color);
-  display: block;
-}
-
-.counter-number,
-.counter-number-text {
-  color: var(--primary-color);
-  font-size: var(--h1-font-size);
-  font-weight: var(--font-weight-bold);
-  line-height: normal;
-}
 
 
 /*---------------------------------------
@@ -740,26 +720,6 @@ strong {
 }
 
 
-/*---------------------------------------
-  DONATE              
------------------------------------------*/
-.donate-section {
-  background-image: url('../images/different-people-doing-volunteer-work.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  padding-top: 150px;
-  padding-bottom: 150px;
-}
-
-.donate-form {
-  background: var(--white-color);
-  border-radius: var(--border-radius-medium);
-  position: relative;
-  overflow: hidden;
-  padding: 50px;
-}
 
 
 /*---------------------------------------
@@ -919,9 +879,9 @@ blockquote::before {
 
 
 /*---------------------------------------
-  TESTIMONIAL CAROUSEL              
+  team CAROUSEL              
 -----------------------------------------*/
-.testimonial-section {
+.team-section {
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -932,20 +892,20 @@ blockquote::before {
 
 
 
-#testimonial-carousel .carousel-caption {
+#team-carousel .carousel-caption {
   position: relative;
   right: 0;
   bottom: 0;
   left: 0;
 }
 
-#testimonial-carousel .carousel-title {
+#team-carousel .carousel-title {
   background: var(--section-bg-color);
   line-height: normal;
   margin-bottom: 30px;
 }
 
-#testimonial-carousel .carousel-title::before {
+#team-carousel .carousel-title::before {
   content: open-quote;
   color: var(--p-color);
   font-size: var(--h1-font-size);
@@ -954,7 +914,7 @@ blockquote::before {
   right: 10px;
 }
 
-#testimonial-carousel .carousel-title::after {
+#team-carousel .carousel-title::after {
   content: close-quote;
   color: var(--p-color);
   font-size: var(--h1-font-size);
@@ -963,11 +923,11 @@ blockquote::before {
   left: 10px;
 }
 
-#testimonial-carousel .carousel-title {
+#team-carousel .carousel-title {
   quotes: "“" "”" "‘" "’";
 }
 
-#testimonial-carousel .carousel-name {
+#team-carousel .carousel-name {
   background: var(--primary-color);
   border-radius: var(--border-radius-medium);
   position: relative;
@@ -975,7 +935,7 @@ blockquote::before {
   padding: 10px 20px;
 }
 
-#testimonial-carousel .carousel-name::before {
+#team-carousel .carousel-name::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -993,7 +953,7 @@ blockquote::before {
   font-weight: var(--font-weight-semibold);
 }
 
-#testimonial-carousel .carousel-indicators {
+#team-carousel .carousel-indicators {
   position: relative;
   top: 150px;
   bottom: auto;
@@ -1001,25 +961,25 @@ blockquote::before {
   margin-bottom: 150px;
 }
 
-#testimonial-carousel .carousel-indicators li {
+#team-carousel .carousel-indicators li {
   text-indent: inherit;
   background: transparent;
   margin: 0 10px; 
 }
 
-#testimonial-carousel .carousel-indicators li,
-#testimonial-carousel .carousel-indicators li::before {
+#team-carousel .carousel-indicators li,
+#team-carousel .carousel-indicators li::before {
   width: 100px;
   height: 45px; 
 }
 
-#testimonial-carousel .carousel-indicators .avatar-image {
+#team-carousel .carousel-indicators .avatar-image {
   width: 45px;
   height: 45px; 
 }
 
-#testimonial-carousel .carousel-indicators .active,
-#testimonial-carousel .carousel-indicators .active .avatar-image {
+#team-carousel .carousel-indicators .active,
+#team-carousel .carousel-indicators .active .avatar-image {
   background: transparent;
   width: 50px; 
   height: 50px;
@@ -1477,17 +1437,17 @@ blockquote::before {
     height: 300px;
   }
 
-  .testimonial-section::before {
+  .team-section::before {
     width: 150px;
     height: 150px;
   }
 
-  .testimonial-section::after {
+  .team-section::after {
     width: 200px;
     height: 200px;
   }
 
-  #testimonial-carousel .carousel-caption {
+  #team-carousel .carousel-caption {
     padding-top: 0;
   }
 
@@ -1600,13 +1560,13 @@ blockquote::before {
     height: 200px;
   }
 
-  .testimonial-section::before {
+  .team-section::before {
     top: -50px;
     width: 100px;
     height: 100px;
   }
 
-  .testimonial-section::after {
+  .team-section::after {
     bottom: -150px;
     width: 200px;
     height: 200px;
