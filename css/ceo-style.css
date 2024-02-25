@@ -1627,4 +1627,30 @@ blockquote::before {
   }
   }
 
+
+  /**tables**/
+ 
+  
+  .thumbnail-img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+  
+  @media (max-width: 576px) {
+    .table-responsive {
+      overflow-x: auto;
+    }
+  
+    #employeeTable th,
+    #employeeTable td {
+      font-size: 0.75rem; /* Adjust as needed */
+    }
+  }
+
+  @media (max-width: 576px) {
+    
+    td {
+      overflow-wrap: break-all;
+    }
+  }
   
