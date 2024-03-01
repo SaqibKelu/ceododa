@@ -215,17 +215,6 @@
     
     <!-- JAVASCRIPT FILES -->
     <script src="js/jquery.min.js"></script>
-
-    <script type="text/javascript">
-
-        $('#headercontent').load('headcontent.html');
-        $('#navmenu').load('navmenu.html');
-        $('#infosec').load('info.html');
-        $('#footcontent').load('footcontent.html');
-        $('#initiatives').load('initiatives.html');
-        $('#contact-us').load('contact.html');
-
-    </script>
     
     <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -250,32 +239,45 @@
 
     <script type="text/javascript">
 
-    $(document).ready(function () {
+        $(function () {
 
-        // document.getElementById("currentYear").innerHTML = new Date().getFullYear();
-        
-        $(".owl-carousel").owlCarousel({
-            loop: true,
-            margin: 10,
-            responsiveClass: true,
-            autoplay:true,
-            responsive: {
-                0: {
-                    items: 2,
-                    nav: true
-                },
-                600: {
-                    items: 4,
-                    nav: true
-                },
-                1000: {
-                    items: 5,
-                    nav: true,
-                    loop: true
-                }
-            }
+            $('#headercontent').load('headcontent.html');
+            //using callback function to wait for navbar to load then make it sticky
+            $('#navmenu').load('navmenu.html', function () {
+                $(".navbar").sticky({ topSpacing: 0 });
+            });
+            $('#initiatives').load('initiatives.html');
+            $('#contact-us').load('contact.html');
+            //Callback to wait for footcontent to load and then update the year
+            $('#footcontent').load('footcontent.html', function () {
+                $('#currentYear').text(new Date().getFullYear());
+            });
+            //Callback to wait for infosec to load and then intialize the owl carousel
+            $('#infosec').load('info.html', function () {
+                $(".owl-carousel").owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    responsiveClass: true,
+                    autoplay: true,
+                    responsive: {
+                        0: {
+                            items: 2,
+                            nav: true
+                        },
+                        600: {
+                            items: 4,
+                            nav: true
+                        },
+                        1000: {
+                            items: 5,
+                            nav: true,
+                            loop: true
+                        }
+                    }
+                });
+            });
         });
-    });
+
     </script>
    
 
