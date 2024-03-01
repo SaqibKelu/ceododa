@@ -258,6 +258,36 @@ strong {
 }
 
 
+/*New Badges*/
+/* .custom-block-body li > .badge {
+  float: left;
+}
+.custom-block-body span.badge {
+  margin-top: 8px;
+  margin-left: 10px;
+}
+.custom-block-body .list-toggle > span.badge {
+  margin-right: 25px;
+}
+.custom-block-body ul li span.badge {
+  margin-top: 0px;
+  font-size: 12px;
+  padding: 3px 5px;
+  margin-left: 10px;
+  border-radius: 5px 5px 5px 5px;
+  background:var(--primary-color)
+}
+
+ul li span.badge_new_notice {
+  margin-top: 0px;
+  font-size: 12px;
+  padding: 3px 5px;
+  margin-left: 10px;
+  border-radius: 5px 5px 5px 5px;
+  background: var(--primary-color);
+} */
+
+
 /*---------------------------------------
   CUSTOM TEXT BOX               
 -----------------------------------------*/
@@ -360,7 +390,13 @@ strong {
 .navbar-brand {
   color: var(--primary-color);
   font-size: var(--h6-font-size);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);  
+}
+
+.navbar-brand:hover {
+  color: var(--primary-color);
+  font-size: var(--h6-font-size);
+  font-weight: var(--font-weight-bold);  
 }
 
 .navbar-brand span {
@@ -662,7 +698,7 @@ strong {
 
 .featured-block-text {
   color: var(--primary-color);
-  font-size: var(--h5-font-size);
+  font-size: var(--h6-font-size);
   margin-top: 20px;
   transition: all 0.5s;
 }
@@ -680,8 +716,8 @@ strong {
 .about-image {
   border-radius: var(--border-radius-medium);
   display: block;
-  width: 350px;
-  height: 400px;
+  width: 600px;
+  height: 550px;
   object-fit: cover;
 }
 
@@ -831,11 +867,10 @@ blockquote::before {
 }
 
 .badge {
-  background: var(--secondary-color);
-  border-radius: var(--border-radius-medium);
-  font-weight: var(--font-weight-normal);
-  line-height: normal;
-  padding-bottom: 2px;
+  background: var(--primary-color);
+  border-radius: 5px 5px 5px 5px;
+  margin-left: 5px;
+  line-height: normal;  
 }
 
 .tags-block-link {
@@ -1266,7 +1301,7 @@ blockquote::before {
 .footer-menu-link {
   font-size: var(--menu-font-size);
   font-weight: var(--font-weight-medium);
-  color: var(--dark-color);
+  color: var(--p-color);
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
@@ -1463,10 +1498,10 @@ blockquote::before {
     padding: 70px 30px 30px 30px;
   }
 
-  .about-image {
+  /* .about-image {
     width: inherit;
     height: 450px;
-  }
+  } */
 
   .volunteer-image {
     width: 250px;
