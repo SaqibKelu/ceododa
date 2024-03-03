@@ -1028,6 +1028,11 @@ blockquote::before {
   height: 50px;
 }
 
+.gov-links-image {
+  width: 100px !important;
+  height: 48px;
+}
+
 
 /*---------------------------------------
   CONTACT               
