@@ -1,97 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CEO Doda</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-    crossorigin="anonymous"></script>
-  <!-- CSS FILES -->
-  <link rel="stylesheet" href="css\bootstrap-icons.css">
-  <link rel="stylesheet" href="css\bootstrap.min.css">
-  <link rel="stylesheet" href="css\ceo-style.css">
-  <!-- JAVASCRIPT FILES -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.sticky.js"></script>
-  <script src="js/click-scroll.js"></script>
-  <script src="js/custom.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO Doda</title>
 
-<body>
-  <div id="navmenu"></div>
+      <!-- CSS FILES -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="stylesheet" href="css\bootstrap-icons.css">
+      <link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css\ceo-style.css">
 
- <!--contact Chief Education Officer-->
-  <section class="about-section section-padding">
-    <div class="container-fluid">
-      <div class="row">
-       
-        <div class="col-lg-6 col-md-5 col-12">
-          <img src="images\ceo.JPG" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
-        </div>
-        <div class="col-lg-5 col-md-7 col-12">
-          <div class="custom-text-block">
-            <h2 class="mb-0">Sh. Purshotam Gouria</h2>
-            <p class="text-muted mb-lg-4 mb-md-4">Chief Education Officer
-            <div class="contact-info">
-              <h5 class="mb-3">Contact Infomation</h5>
-              <p class="d-flex mb-2">
-                <i class="bi-geo-alt me-2"></i>
-               Near Dak Bungalow, Doda, J&K 182202
-              
-              <p class="d-flex mb-2">
-                <i class="bi-telephone me-2"></i>
-                <a href="tel: 01996-234771">
-                  01996-234771
-                </a>
-              
-              <p class="d-flex">
-                <i class="bi-envelope me-2"></i>
-                <a href="mailto:ceo-doda@jk.gov.in">
-                  ceo-doda@jk.gov.in
-                </a>
-              
+  </head>
+
+  <body>
+    <div id="navmenu"></div>
+
+    <!--contact Chief Education Officer-->
+    <section class="about-section section-padding">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-lg-6 col-md-5 col-12">
+            <img src="images\ceo.JPG" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
+          </div>
+          <div class="col-lg-5 col-md-7 col-12">
+            <div class="custom-text-block">
+              <h2 class="mb-0">Sh. Purshotam Gouria</h2>
+              <p class="text-muted mb-lg-4 mb-md-4">Chief Education Officer
+              <div class="contact-info">
+                <h5 class="mb-3">Contact Infomation</h5>
+                <p class="d-flex mb-2">
+                  <i class="bi-geo-alt me-2"></i>
+                  Near Dak Bungalow, Doda, J&K 182202
+
+                <p class="d-flex mb-2">
+                  <i class="bi-telephone me-2"></i>
+                  <a href="tel: 01996-234771">
+                    01996-234771
+                  </a>
+
+                <p class="d-flex">
+                  <i class="bi-envelope me-2"></i>
+                  <a href="mailto:ceo-doda@jk.gov.in">
+                    ceo-doda@jk.gov.in
+                  </a>
+
+              </div>
             </div>
           </div>
+
         </div>
-       
       </div>
-    </div>
-  </section>
-   <!--contact Chief Education Officer ends-->
+    </section>
+    <!--contact Chief Education Officer ends-->
 
 
-  <!--other contact person-->
-  <section class="section-padding">
-    <div class="container">
-      
-      
+    <!--other contact person-->
+    <section class="section-padding">
+      <div class="container">
+
+
         <div class="table-responsive ">
           <table id="employeeTable" class="table">
             <thead class="table-heading">
               <tr>
                 <th>Name</th>
-               
+
                 <th>Section</th>
                 <th>Number</th>
                 <th>Email</th>
               </tr>
             </thead>
             <tbody>
-              
+
               <!--Row dr anis ahmed-->
               <tr>
                 <td>
                   <div class="d-flex align-items-center">
-                    <img src="staff-images\depo.JPG" alt="" style="width: 45px; height: 45px"
-                      class="rounded-circle" />
+                    <img src="staff-images\depo.JPG" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
                     <div class="ms-3">
                       <p class="fw-bold mb-1 title_o">Dr. Anis Ahmed</p>
                       District Education Planning Officer
@@ -99,216 +89,211 @@
                   </div>
                 </td>
                 <td>
-                 Planning
+                  Planning
                 </td>
                 <td>7051431032
                 </td>
                 <td>psceododa@gmail.com</td>
               </tr>
-                <!--Row dr anis ahmed ends-->
+              <!--Row dr anis ahmed ends-->
 
-                 <!--Row tanveer ahmed -->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\tanveerahmed.jpg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Tanveer Ahmed</p>
-                        Statistical Officer
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                  Planning
-                  </td>
-                  <td>
-                   7889373807
-                  </td>
-                  <td>psceododa@gmail.com</td>
-                </tr>
-                <!--Row tanveer ahmed ends-->
-
-                 <!--Row sandeep kumar-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Sandeep Kumar</p>
-                         Junior Scale Stenographer
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                   P.A Section
-                  </td>
-                  <td>
-                   01996 299028
-                  </td>
-                  <td>paceododa@gmail.com</td>
-                </tr>
-                <!--Row sandeep kumar ends-->
-
-                 <!--Row riaz ahmed-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\riazsr.jpeg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Riaz Ahmed</p>
-                        Senior Assistant
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                   Establishment
-                  </td>
-                  <td>
-                   8803730635
-                  </td>
-                  <td>esttteachingceododa@gmail.com</td>
-                </tr>
-                <!--Row riaz ahmed ends-->
-
-                 <!--Row mubarak-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\mubarak.jpeg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Mubarak Ali</p>
-                        Senior Assistant
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                   Gazetted
-                  </td>
-                  <td>
-                   01996 234771
-                  </td>
-                  <td>ceododagaz@gmail.com</td>
-                </tr>
-                <!--Row mubarak ends-->
-
-                 <!--Row rashid-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\rashidyasin.jpeg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Rashid Yasin</p>
-                        Junior Assistant
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                   Non-Teaching, ReT, RTI
-                  </td>
-                  <td>
-                   9596977422
-                  </td>
-                  <td>ceododa1ret@gmail.com</td>
-                </tr>
-                <!--Row rashid ends-->
-                 <!--Row ishaq-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\ishaq.JPG" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Mohd Ishaq</p>
-                        DEO
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                   Establishment (Private Schools)
-                  </td>
-                  <td>
-                   01996 234771
-                  </td>
-                  <td>ceododa1@gmail.com</td>
-                </tr>
-                <!--Row ishaq ends-->
-
-                 <!--Row kavita thakur-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\kavita.jpeg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Kavita Thakur</p>
-                        I/C Legal Section
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                   Legal
-                  </td>
-                  <td>
-                   9796000097
-                  </td>
-                  <td>ceolegal123@gmail.com</td>
-                </tr>
-                <!--Row kavita thakur ends-->
-
-                 <!--Row neeraj-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\neeraj.jpeg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Neeraj Anotray</p>
-                        Junior Assistant
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                   Permission
-                  </td>
-                  <td>
-                   01996 234771
-                  </td>
-                  <td>premissionsectionceododa@gmail.com</td>
-                </tr>
-                <!--Row neeraj ends-->
-                 <!--Row kd shah-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">KD Shah</p>
-                        Auditor
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                   Samagra
-                  </td>
-                  <td>
-                   9906033600
-                  </td>
-                  <td>auditorssadoda@gmail.com</td>
-                </tr>
-                <!--Row kd shah ends-->
-
-                <!--Row majid anjum-->
+              <!--Row tanveer ahmed -->
               <tr>
                 <td>
                   <div class="d-flex align-items-center">
-                    <img src="staff-images\majid.jpeg" alt="" style="width: 45px; height: 45px"
+                    <img src="staff-images\tanveerahmed.jpg" alt="" style="width: 45px; height: 45px"
                       class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Tanveer Ahmed</p>
+                      Statistical Officer
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  Planning
+                </td>
+                <td>
+                  7889373807
+                </td>
+                <td>psceododa@gmail.com</td>
+              </tr>
+              <!--Row tanveer ahmed ends-->
+
+              <!--Row sandeep kumar-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
+                      class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Sandeep Kumar</p>
+                      Junior Scale Stenographer
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  P.A Section
+                </td>
+                <td>
+                  01996 299028
+                </td>
+                <td>paceododa@gmail.com</td>
+              </tr>
+              <!--Row sandeep kumar ends-->
+
+              <!--Row riaz ahmed-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\riazsr.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Riaz Ahmed</p>
+                      Senior Assistant
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  Establishment
+                </td>
+                <td>
+                  8803730635
+                </td>
+                <td>esttteachingceododa@gmail.com</td>
+              </tr>
+              <!--Row riaz ahmed ends-->
+
+              <!--Row mubarak-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\mubarak.jpeg" alt="" style="width: 45px; height: 45px"
+                      class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Mubarak Ali</p>
+                      Senior Assistant
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  Gazetted
+                </td>
+                <td>
+                  01996 234771
+                </td>
+                <td>ceododagaz@gmail.com</td>
+              </tr>
+              <!--Row mubarak ends-->
+
+              <!--Row rashid-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\rashidyasin.jpeg" alt="" style="width: 45px; height: 45px"
+                      class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Rashid Yasin</p>
+                      Junior Assistant
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  Non-Teaching, ReT, RTI
+                </td>
+                <td>
+                  9596977422
+                </td>
+                <td>ceododa1ret@gmail.com</td>
+              </tr>
+              <!--Row rashid ends-->
+              <!--Row ishaq-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\ishaq.JPG" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Mohd Ishaq</p>
+                      DEO
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  Establishment (Private Schools)
+                </td>
+                <td>
+                  01996 234771
+                </td>
+                <td>ceododa1@gmail.com</td>
+              </tr>
+              <!--Row ishaq ends-->
+
+              <!--Row kavita thakur-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\kavita.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Kavita Thakur</p>
+                      I/C Legal Section
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  Legal
+                </td>
+                <td>
+                  9796000097
+                </td>
+                <td>ceolegal123@gmail.com</td>
+              </tr>
+              <!--Row kavita thakur ends-->
+
+              <!--Row neeraj-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\neeraj.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Neeraj Anotray</p>
+                      Junior Assistant
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  Permission
+                </td>
+                <td>
+                  01996 234771
+                </td>
+                <td>premissionsectionceododa@gmail.com</td>
+              </tr>
+              <!--Row neeraj ends-->
+              <!--Row kd shah-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
+                      class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">KD Shah</p>
+                      Auditor
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  Samagra
+                </td>
+                <td>
+                  9906033600
+                </td>
+                <td>auditorssadoda@gmail.com</td>
+              </tr>
+              <!--Row kd shah ends-->
+
+              <!--Row majid anjum-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\majid.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
                     <div class="ms-3">
                       <p class="fw-bold mb-1 title_o">Majid Anjum</p>
                       Assistant Programmer
@@ -316,124 +301,120 @@
                   </div>
                 </td>
                 <td>
-                 Samagra
+                  Samagra
                 </td>
                 <td>
-                 7889485609
+                  7889485609
                 </td>
                 <td>majid.anjum@jk.gov.in</td>
               </tr>
-                <!--Row majid anjum ends-->
+              <!--Row majid anjum ends-->
 
-                 <!--Row waseem -->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\wasim.JPG" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Mohd Wasim Malik</p>
-                        Junior Assistant
-                      </div>
+              <!--Row waseem -->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\wasim.JPG" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Mohd Wasim Malik</p>
+                      Junior Assistant
                     </div>
-                  </td>
-                  <td>
-                   Accounts
-                  </td>
-                  <td>
-                   9622114015
-                  </td>
-                  <td>abc@gmail.com</td>
-                </tr>
-                <!--Row waseem ends-->
+                  </div>
+                </td>
+                <td>
+                  Accounts
+                </td>
+                <td>
+                  9622114015
+                </td>
+                <td>abc@gmail.com</td>
+              </tr>
+              <!--Row waseem ends-->
 
-                 <!--Row riaz budget-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\riaz.jpeg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Riaz Ahmed</p>
-                        District Budget Master
-                      </div>
+              <!--Row riaz budget-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\riaz.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Riaz Ahmed</p>
+                      District Budget Master
                     </div>
-                  </td>
-                  <td>
-                   Budget
-                  </td>
-                  <td>
-                   9906000627
-                  </td>
-                  <td>riaz.batt@jk.gov.in</td>
-                </tr>
-                <!--Row riaz budget ends-->
+                  </div>
+                </td>
+                <td>
+                  Budget
+                </td>
+                <td>
+                  9906000627
+                </td>
+                <td>riaz.batt@jk.gov.in</td>
+              </tr>
+              <!--Row riaz budget ends-->
 
-                 <!--Row muzaffar iqbal-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\muzafar.jpeg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Muzaffar Iqbal</p>
-                        Junior Assistant
-                      </div>
+              <!--Row muzaffar iqbal-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\muzafar.jpeg" alt="" style="width: 45px; height: 45px"
+                      class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Muzaffar Iqbal</p>
+                      Junior Assistant
                     </div>
-                  </td>
-                  <td>
-                   Scholarship
-                  </td>
-                  <td>
-                   7780894130
-                  </td>
-                  <td>nspdoda@gmail.com</td>
-                </tr>
-                <!--Row muzaffar iqbal ends-->
+                  </div>
+                </td>
+                <td>
+                  Scholarship
+                </td>
+                <td>
+                  7780894130
+                </td>
+                <td>nspdoda@gmail.com</td>
+              </tr>
+              <!--Row muzaffar iqbal ends-->
 
-                 
-                 <!--Row ajay kumar-->
-                 <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\ajay.jpeg" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Ajay Kumar</p>
-                        Junior Assistant
-                      </div>
+
+              <!--Row ajay kumar-->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\ajay.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Ajay Kumar</p>
+                      Junior Assistant
                     </div>
-                  </td>
-                  <td>
-                   Examination, Election
-                  </td>
-                  <td>
-                   01996 234771
-                  </td>
-                  <td>ajay.bhagat9600@jk.gov.in</td>
-                </tr>
-                <!--Row ajay kumar ends-->
-                <!--Row nazeema -->
-                <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img src="staff-images\nazeema.JPG" alt="" style="width: 45px; height: 45px"
-                        class="rounded-circle" />
-                      <div class="ms-3">
-                        <p class="fw-bold mb-1 title_o">Nazeema Banoo</p>
-                        MTS
-                      </div>
+                  </div>
+                </td>
+                <td>
+                  Examination, Election
+                </td>
+                <td>
+                  01996 234771
+                </td>
+                <td>ajay.bhagat9600@jk.gov.in</td>
+              </tr>
+              <!--Row ajay kumar ends-->
+              <!--Row nazeema -->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img src="staff-images\nazeema.JPG" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1 title_o">Nazeema Banoo</p>
+                      MTS
                     </div>
-                  </td>
-                  <td>
-                   Receipt/Despatch
-                  </td>
-                  <td>
-                   01996 234771
-                  </td>
-                  <td>ceo-doda@jk.gov.in</td>
-                </tr>
-                <!--Row nazeema ends-->
+                  </div>
+                </td>
+                <td>
+                  Receipt/Despatch
+                </td>
+                <td>
+                  01996 234771
+                </td>
+                <td>ceo-doda@jk.gov.in</td>
+              </tr>
+              <!--Row nazeema ends-->
 
 
 
@@ -444,26 +425,43 @@
           </table>
         </div>
       </div>
-     
-    </div>
-    
-  </section>
+
+      </div>
+
+    </section>
+
+    <!--second contact person ends-->
+    <div id="footcontent"></div>
+  </body>
   
-  <!--second contact person ends-->
-  <div id="footcontent"></div>
-</body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+  <!-- JAVASCRIPT FILES -->
+  <script src="js/jquery.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  >
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+  
   <script>
-    $(document).ready(function() {
-      $('#employeeTable').DataTable({"order":false, "searching":false, "lengthChange":false});
+    $(document).ready(function () {
+      $('#employeeTable').DataTable({ "order": false, "searching": false, "lengthChange": false });
     });
   </script>
-<script type="text/javascript">
-  $('#navmenu').load('navmenu.html');
-  $('#footcontent').load('footcontent.html');
+  <script src="js/jquery.sticky.js"></script>
+  <script type="text/javascript">
+    $(function(){
+            $('#navmenu').load('navmenu.html', function () {
+                $(".navbar").sticky({ topSpacing: 0 });
+            });
+
+            $('#footcontent').load('footcontent.html', function () {
+                $('#currentYear').text(new Date().getFullYear());
+            });
+
+    });
 </script>
 
 </html>
