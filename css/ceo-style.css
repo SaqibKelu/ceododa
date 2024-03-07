@@ -738,7 +738,7 @@ ul li span.badge_new_notice {
   NEWS         
 -----------------------------------------*/
 .news-detail-header-section {
-  background-image: url('images\profile.jpg');
+  background-image: url('blog\pmshri-folio.JPG');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1552,6 +1552,7 @@ blockquote::before {
   @media (max-width: 576px) {
     .table-responsive {
       overflow-x: auto;
+      
     }
   
     #employeeTable th,
@@ -1559,6 +1560,15 @@ blockquote::before {
       font-size: 0.75rem; /* Adjust as needed */
     }
   }
+  .table-responsive {
+    overflow: auto;
+}
+
+.table-responsive td {
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflow */
+}
 
  /*----------------------------------
   TIMELINES
