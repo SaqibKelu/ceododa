@@ -1560,15 +1560,7 @@ blockquote::before {
       font-size: 0.75rem; /* Adjust as needed */
     }
   }
-  .table-responsive {
-    overflow: auto;
-}
-
-.table-responsive td {
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: hidden; /* Hide overflowing text */
-    text-overflow: ellipsis; /* Display ellipsis (...) for overflow */
-}
+  
 
  /*----------------------------------
   TIMELINES
