@@ -68,57 +68,49 @@
         </div>
     
         <!-- Government Schools -->
-        <div class="col-lg-4 mb-4">
-          <div class="custom-block-wrap">
-            <div class="custom-block">
+        <div class="col-lg-6 mb-6">
+          <div class="custom-block-wrap">            
               <div class="custom-block-body">
                 <h5 class="mb-3 text-center">Government Schools</h5>
-                <!-- Display Pie Chart for Government Schools -->
-                <canvas id="govtSchoolsChart" width="150" height="150"></canvas>
-              </div>
-            </div>
+                <div id="govtSchoolsChart" style="width:100%; "></div>
+              </div>            
           </div>
-        </div>
+        </div>        
         <!-- Government Schools end -->
     
         <!-- Private Schools -->
-        <div class="col-lg-4 mb-4">
-          <div class="custom-block-wrap">
-            <div class="custom-block">
+        <div class="col-lg-6 mb-6">
+          <div class="custom-block-wrap">            
               <div class="custom-block-body">
                 <h5 class="mb-3 text-center">Private Schools</h5>
-                <canvas id="privateSchoolsChart" width="150" height="150"></canvas>
-              </div>
-            </div>
+                <div id="privateSchoolsChart" style="width:100%; "></div>
+              </div>            
           </div>
-        </div>
+        </div>         
         <!-- Private Schools end -->
     
         <!-- Other Schools -->
-        <div class="col-lg-4 mb-4">
-          <div class="custom-block-wrap">
-            <div class="custom-block">
+        <div class="col-lg-6 mb-6">
+          <div class="custom-block-wrap">            
               <div class="custom-block-body">
                 <h5 class="mb-3 text-center">Other Schools</h5>
-                <canvas id="otherSchoolsChart" width="150" height="150"></canvas>
-              </div>
-            </div>
+                <div id="otherSchoolsChart" style="width:100%; "></div>
+              </div>            
           </div>
-        </div>
+        </div>        
         <!-- Other Schools end -->
     
         <!-- Total Registered Students -->
-        <div class="col-lg-4 mb-4">
-          <div class="custom-block-wrap">
-            <div class="custom-block">
+        <div class="col-lg-6 mb-6">
+          <div class="custom-block-wrap">            
               <div class="custom-block-body">
                 <h5 class="mb-3 text-center">Total Registered Students</h5>
-                <canvas id="registeredStudentsChart" width="150" height="150"></canvas>
-              </div>
-            </div>
+                <div id="registeredStudentsChart" style="width:100%; "></div>
+              </div>            
           </div>
         </div>
-        <!-- Total Registered Students end -->    
+        <!-- Total Registered Students end --> 
+
       </div>
     </div>
     
@@ -149,167 +141,212 @@
 <script src="js/jquery.sticky.js"></script>
 <!-- <script src="js/click-scroll.js"></script> -->
 <!-- <script src="js/custom.js"></script> -->
-<!--Chart.js-->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<!--High Charts-->
+<script src="js/high-charts.js"></script>
+<!--High Charts Themes JS-->
+<script type="text/javascript" src="/js/themes/gray.js"></script>
+
+<!--High Charts Intialization-->
 <script>
-  
-  Chart.register(ChartDataLabels);
 
-  // Data for Government Schools Pie Chart
-  var govtSchoolsData = {
-    
-    labels: ["Higher Secondaries", "High Schools", "Middle Schools", "Primary Schools", "KGBV"],     
-    datasets: [{
-      data: [56, 108, 438, 642, 5],
-      backgroundColor: [
-        '#ff6384',
-        '#36a2eb',
-        '#cc65fe',
-        '#ffce56',
-        '#4bc0c0',
-        '#ff9f40'
-      ]
-    }]
-  };
-  
+  var govSchoolsData = [{
+      name: "Higher Secondaries",
+      y: 56
+    }, {
+      name: "High Schools",
+      y: 108
+    }, {
+      name: "Middle Schools",
+      y: 438
+    }, {
+      name: "Primary Schools",
+      y: 642
+    }, {
+      name: "KGBV",
+      y: 5
+    }];
 
-  // Data for Private Schools Pie Chart
-  var privateSchoolsData = {
-    labels: ["Primary Schools", "Middle Schools", "High Schools", "Higher Secondary Schools"],
-    datasets: [{
-      data: [148, 88, 27, 8],
-      backgroundColor: [
-        '#ff6384',
-        '#36a2eb',
-        '#cc65fe',
-        '#ffce56'
-      ]
-    }]
-  };
+    var privateSchoolsData = [{
+      name: "Higher Secondaries",
+      y: 8
+    }, {
+      name: "High Schools",
+      y: 27
+    }, {
+      name: "Middle Schools",
+      y: 88
+    }, {
+      name: "Primary Schools",
+      y: 148
+    }];
 
-  // Data for Other Schools Pie Chart
-  var otherSchoolsData = {
-    labels: ["Kendriya Vidyalayas", "Madrasas", "JNV"],
-    datasets: [{
-      data: [2, 3, 1],
-      backgroundColor: [
-        '#ff6384',
-        '#36a2eb',
-        '#cc65fe'
-      ]
-    }]
-  };
+    var otherSchoolsData = [{
+      name: "Kendriya Vidyalayas",
+      y: 2
+    }, {
+      name: "Madrasas",
+      y: 3
+    }, {
+      name: "JNV",
+      y: 1
+    }];
 
-  // Data for Total Registered Students Pie Chart
-  var registeredStudentsData = {
-    labels: ["Boys", "Girls"],
-    datasets: [{
-      data: [6900, 71714],
-      backgroundColor: [
-        '#ff6384',
-        '#36a2eb'
-      ]
-    }]
-  };
-
-  var config = {
-    
-  }
-
-  // Initialize and render charts
-  var govtSchoolsChart = new Chart(document.getElementById('govtSchoolsChart'), {
-    type: 'pie',
-    data: govtSchoolsData,
-    options: {
-      plugins: {
-        datalabels: {
-          font: {
-            weight : 'bold'
-          },
-          anchor: 'end',
-          align: 'start',
-          borderRadius: 25,
-          borderWidth: 2,
-
-        },
-        legend : {
-          display : true,
-          position: 'right'
-        }
+    var registeredStudentsData = [
+      {
+        name: 'Boys',
+        y: 10123
+      },
+      {
+        name: 'Girls',
+        y: 5643
       }
-    }
-  });
+    ]
 
-  var privateSchoolsChart = new Chart(document.getElementById('privateSchoolsChart'), {
-    type: 'pie',
-    data: privateSchoolsData,
-    options: {
-      plugins: {
-        datalabels: {
-          font: {
-            weight : 'bold'
-          },
-          anchor: 'end',
-          align: 'start',
-          borderRadius: 25,
-          borderWidth: 2,
 
-        },
-        legend : {
-          display : true,
-          position: 'right'
+    document.addEventListener('DOMContentLoaded', function () {
+        const chart = Highcharts.chart('govtSchoolsChart', {
+          chart: {
+        type: 'pie',
+        style:{
+          fontFamily: "Metropolis, sans-serif"
         }
-      }
-    }
-  });
+      },
+      title: {
+      text: null
+      },
 
-  var otherSchoolsChart = new Chart(document.getElementById('otherSchoolsChart'), {
-    type: 'pie',
-    data: otherSchoolsData,
-    options: {
-      plugins: {
-        datalabels: {
-          font: {
-            weight : 'bold'
+      legend: {
+        layout: 'horizontal',
+      },
+      
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '{point.name}: {point.y}',
           },
-          anchor: 'end',
-          align: 'start',
-          borderRadius: 25,
-          borderWidth: 2,
-
-        },
-        legend : {
-          display : true,
-          position: 'right'
+          showInLegend: true
         }
-      }
-    }
-  });
+      },
+      series: [{
+        name: 'Count',
+        colorByPoint: true,
+        data: govSchoolsData
+      }]
+        });
+    });
 
-  var registeredStudentsChart = new Chart(document.getElementById('registeredStudentsChart'), {
-    type: 'pie',
-    data: registeredStudentsData,
-    options: {
-      plugins: {
-        datalabels: {
-          font: {
-            weight : 'bold'
+    document.addEventListener('DOMContentLoaded', function () {
+        const chart = Highcharts.chart('privateSchoolsChart', {
+          chart: {
+        type: 'pie',
+        style:{
+          fontFamily: "Metropolis, sans-serif"
+        }
+      },
+      title: {
+      text: null
+      },
+
+      legend: {
+        layout: 'horizontal',
+      },
+      
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '{point.name}: {point.y}',
           },
-          anchor: 'end',
-          align: 'start',
-          borderRadius: 25,
-          borderWidth: 2,
-
-        },
-        legend : {
-          display : true,
-          position: 'right'
+          showInLegend: true
         }
-      }
-    }
-  });
+      },
+      series: [{
+        name: 'Count',
+        colorByPoint: true,
+        data: privateSchoolsData
+      }]
+        });
+    });
+
+  document.addEventListener('DOMContentLoaded', function () {
+        const chart = Highcharts.chart('otherSchoolsChart', {
+          chart: {
+        type: 'pie',
+        style:{
+          fontFamily: "Metropolis, sans-serif"
+        }
+      },
+      title: {
+      text: null
+      },
+
+      legend: {
+        layout: 'horizontal',
+      },
+      
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '{point.name}: {point.y}',
+          },
+          showInLegend: true
+        }
+      },
+      series: [{
+        name: 'Count',
+        colorByPoint: true,
+        data: otherSchoolsData
+      }]
+        });
+    });
+
+  document.addEventListener('DOMContentLoaded', function () {
+        const chart = Highcharts.chart('registeredStudentsChart', {
+          chart: {
+        type: 'pie',
+        style:{
+          fontFamily: "Metropolis, sans-serif"
+        }
+      },
+      title: {
+      text: null
+      },
+
+      legend: {
+        layout: 'horizontal',
+      },
+      
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '{point.name}: {point.y}',
+          },
+          showInLegend: true
+        }
+      },
+      series: [{
+        name: 'Count',
+        colorByPoint: true,
+        data: registeredStudentsData
+      }]
+        });
+    });   
+
 </script>
+
+
 
 <script type="text/javascript">
   $(function () {
