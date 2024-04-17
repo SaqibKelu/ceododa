@@ -454,13 +454,13 @@ ul li span.badge_new_notice {
   font-size: var(--menu-font-size);
   font-weight: var(--font-weight-medium);
   position: relative;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.dropdown-menu li:last-child .dropdown-item {
+/* .dropdown-menu li:last-child .dropdown-item {
   padding-top: 0;
-}
+} */
 
 .dropdown-item.active, 
 .dropdown-item:active,
