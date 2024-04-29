@@ -720,6 +720,13 @@ ul li span.badge_new_notice {
   height: 550px;
   object-fit: cover;
 }
+.front-image {
+  border-radius: var(--border-radius-medium);
+  display: block;
+  width: 350px;
+  height: 400px;
+  object-fit: cover;
+}
 
 .custom-text-block {
   padding: 60px 40px;
