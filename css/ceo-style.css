@@ -40,12 +40,12 @@
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:               #448AFF;
+  --primary-color:               #039BE5;
   --secondary-color:              #5a6f80;
   --section-bg-color:             #f0f8ff;
   --site-footer-bg-color:         #f0f8ff;
   --custom-btn-bg-color:          #597081;
-  --custom-btn-bg-hover-color:    #448AFF;
+  --custom-btn-bg-hover-color:    #039BE5;
   --dark-color:                   #000000;
   --p-color:                      #717275;
   --border-color:                 #e9eaeb;
