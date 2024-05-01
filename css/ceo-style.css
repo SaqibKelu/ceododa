@@ -40,12 +40,12 @@
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:               #448AFF;
+  --primary-color:               #039BE5;
   --secondary-color:              #5a6f80;
   --section-bg-color:             #f0f8ff;
   --site-footer-bg-color:         #f0f8ff;
   --custom-btn-bg-color:          #597081;
-  --custom-btn-bg-hover-color:    #448AFF;
+  --custom-btn-bg-hover-color:    #039BE5;
   --dark-color:                   #000000;
   --p-color:                      #717275;
   --border-color:                 #e9eaeb;
@@ -1508,27 +1508,28 @@ blockquote::before {
 
 /*header marquee*/
 .scroll-left {
-  height: 30px; 
+  height: 40px; 
   overflow-x:hidden;
   position: relative;
   white-space: nowrap;
   }
   .scroll-left p {
+    font-size: 15px;;
 
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0;
-  line-height: 30px;
+  line-height: 40px;
   text-align: center;
   /* Starting position */
   -moz-transform:translateX(100%);
   -webkit-transform:translateX(100%); 
   transform:translateX(100%);
   /* Apply animation to this element */ 
-  -moz-animation: scroll-left 20s linear infinite;
-  -webkit-animation: scroll-left 20s linear infinite;
-  animation: scroll-left 20s linear infinite;
+  -moz-animation: scroll-left 30s linear infinite;
+  -webkit-animation: scroll-left 30s linear infinite;
+  animation: scroll-left 30s linear infinite;
   }
   /* Move it (define the animation) */
   @-moz-keyframes scroll-left {
