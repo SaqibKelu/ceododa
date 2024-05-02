@@ -39,6 +39,7 @@
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
+  --marquee-bg-color:             #ffcc00;
   --white-color:                  #ffffff;
   --primary-color:               #039BE5;
   --secondary-color:              #5a6f80;
@@ -565,10 +566,26 @@ ul li span.badge_new_notice {
 /*---------------------------------------
   SITE HEADER              
 -----------------------------------------*/
+.news{width: 100px}
+
+.marquee {
+  
+  background-color: var(--marquee-bg-color);
+}
+.dot{
+  height: 6px;
+  width: 6px;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 2px !important;
+  background-color: rgb(207,23,23);
+  border-radius: 50%;
+  display: inline-block
+}
+
+
 .site-header {
-  background: var(--primary-color);
-  padding-top: 15px;
-  padding-bottom: 10px;
+  background: var(--white-color);
 }
 
 .site-header p,
