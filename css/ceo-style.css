@@ -41,7 +41,7 @@
 :root {
   --marquee-bg-color:             #ffcc00;
   --white-color:                  #ffffff;
-  --primary-color:               #039BE5;
+  --primary-color:                #039BE5;
   --secondary-color:              #5a6f80;
   --section-bg-color:             #f0f8ff;
   --site-footer-bg-color:         #f0f8ff;
@@ -564,7 +564,7 @@ ul li span.badge_new_notice {
 
 
 /*---------------------------------------
-  SITE HEADER              
+  News Ticker              
 -----------------------------------------*/
 .news{width: 100px}
 
@@ -583,6 +583,9 @@ ul li span.badge_new_notice {
   display: inline-block
 }
 
+/*---------------------------------------
+  Site Header              
+-----------------------------------------*/
 
 .site-header {
   background: var(--white-color);
