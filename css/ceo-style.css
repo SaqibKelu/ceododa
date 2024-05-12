@@ -296,7 +296,7 @@ ul li span.badge_new_notice {
   background: var(--white-color);
   border-radius: var(--border-radius-medium);
   margin-bottom: 24px;
-  padding: 40px;
+  padding: 30px;
 }
 
 .custom-text-box-image {
@@ -1394,7 +1394,7 @@ blockquote::before {
     padding-top: 0;
   }
 
-  blockquote {
+  .blockquote {
     padding: 70px 30px 30px 30px;
   }
 
@@ -1589,6 +1589,11 @@ blockquote::before {
     #employeeTable td {
       font-size: 0.75rem; /* Adjust as needed */
     }
+  }
+
+  /* Adjust the min width according to the content of custom-text-box as the default min width pushes the title out of scope */
+  .table tbody tr .card-view-title{
+    min-width: 35% !important;  
   }
   
 

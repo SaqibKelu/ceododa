@@ -10,120 +10,101 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
   <link rel="manifest" href="images/favicon_io/site.webmanifest">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-        rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-      <link rel="stylesheet" href="css\bootstrap-icons.css">
-      <link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="css\ceo-style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css\bootstrap-icons.css">
+  <link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="css\ceo-style.css">
 
 </head>
 
 <body>
   <div id="navmenu"></div>
 
- <!--Notifications table-->
- <section class="section-padding">
-  <div class="container">
-     <div class="col-lg-12 col-12 text-center">
-         <h2>Notifications</h2>
-     </div>
-   
-     <div class="table-responsive">
-       <table id="notificationsTable" class="table table-sm">
-         <thead class="table-heading">
-                <tr>
-                    <th>Title</th>
-                    <th>Number</th>
-                    <th>Release Date</th>
-                    <th>View/Download</th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Annual Audit of Accounts of Samagra Shiksha for 2023-24 </td>
-                <td>CEO/D/SmS/Audit/2024-25/764-939</td>
-                <td>25-04-2024
-                </td>
-                <td><a href="resources\notifications\Annual Audit 2023-24 Samagra PM SHRI.pdf">   <i class="fa fa-file-pdf-o"style="color:#039BE5"></i></a></td>
-            </tr>
-            <tr>
-              <td>Links to the different Courses offered on Swayam by NCERT for Class XI and XII Students </td>
-              <td>DSEJ/Coord/10150-65</td>
-              <td>24-04-2024
-              </td>
-              <td><a href="resources\notifications\Course wise link.docx">   <i class="fa fa-file-pdf-o"style="color:#039BE5"></i></a></td>
-          </tr>
-              <tr>
-                <td>Online Courses for Classes XI and XII by NCERT on Swayam </td>
-                <td>-</td>
-                <td>24-04-2024</td>
-                
-                <td><a href="resources\notifications\online courses.pdf">   <i class="fa fa-file-pdf-o"style="color:#039BE5"></i></a></td>
-            </tr>
+  <!--Notifications table-->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-12">
+          <div class="custom-text-box">
+            <h2 class="text-center">Notifications</h2>
+            <div class="table-responsive">
+              <table id="notificationsTable" class="table table-sm" data-mobile-responsive="true"
+                data-url="/resources/notifications.json">
+                <thead class="table-heading">
+                  <tr>
+                    <th data-field="noticeTitle">Title</th>
+                    <th data-field="noticeNumber">Number</th>
+                    <th data-field="noticeDate">Release Date</th>
+                    <th data-field="noticeLink" data-formatter="linkFormatter">View</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+         
+        </div>
 
-              <tr>
-                <td>Class 8th Result </td>
-                <td>DIET/D/273-383</td>
-                <td>24-04-2024
-                </td>
-                <td><a href="resources\notifications\8th Rsult DIET Doda H&S.PDF">   <i class="fa fa-file-pdf-o"style="color:#039BE5"></i></a></td>
-            </tr>
+        
+      </div>
+
+  </section>
 
 
-              <tr>
-                <td>Lifting of Free Supply of Text Books for Academic Session 2024-25</td>
-                <td>CEO/D/Planning/1302-12</td>
-                <td>08-04-2024</td>
-                <td><a href="resources\notifications\textbooks.pdf">   <i class="fa fa-file-pdf-o"style="color:#039BE5"></i></a></td>
-            </tr>
 
-                <tr>
-                    <td>Release of Funds"Beti Anmol"-2023-24 </td>
-                    <td>CEO/D/Acctt/41047-102</td>
-                    <td>06-03-2024</td>
-                    <td><a href="resources\Beti Anmol 2nd instalment 2023-24.pdf">   <i class="fa fa-file-pdf-o"style="color:#039BE5"></i></a></td>
-                </tr>
 
-               
-               
-                
-            </tbody>
-            
-        </table>
-    </div>
- </section>
-       
-       
 
- 
-  
-   <!--Notifications table ends-->
+  <!--Notifications table ends-->
   <div id="footcontent"></div>
 </body>
 <script src="js/jquery.min.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --> 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script> 
-  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('#notificationsTable').DataTable({"order":false});
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+  integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/bootstrap-table.min.js"></script>
+<script src="js/bootstrap-table-mobile.js"></script>
+<script>
+  $(document).ready(function () {
+    // $('#notificationsTable').DataTable({"order":false});
+    $('#notificationsTable').bootstrapTable({
+      pagination: true,
+      search: true,
+      showColumns: true,
+      showToggle: true,
+      showFullscreen: true,
+      showPaginationSwitch: true,
+      showRefresh: true,
+      showExport: true,
+      exportTypes: ['pdf', 'csv', 'excel'],
+      exportDataType: 'all',
+      exportOptions: {
+        fileName: 'Notifications'
+      }
+
     });
-  </script>
+
+  });
+
+  function linkFormatter(value, row, index) {
+    return `<a href="${value}" ><i class="fa fa-file-pdf-o" style="color:#039BE5"></i></a>`;
+  }
+</script>
 <script src="js/jquery.sticky.js"></script>
 <script type="text/javascript">
-  $(function(){
-          $('#navmenu').load('navmenu.html', function () {
-              $(".navbar").sticky({ topSpacing: 0 });
-          });
+  $(function () {
+    $('#navmenu').load('navmenu.html', function () {
+      $(".navbar").sticky({ topSpacing: 0 });
+    });
 
-          $('#footcontent').load('footcontent.html', function () {
-              $('#currentYear').text(new Date().getFullYear());
-          });
+    $('#footcontent').load('footcontent.html', function () {
+      $('#currentYear').text(new Date().getFullYear());
+    });
 
   });
 </script>
