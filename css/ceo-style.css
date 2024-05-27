@@ -676,7 +676,7 @@ ul li span.badge_new_notice {
   width: 40px;
   height: 40px;
   opacity: 0;
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 .carousel-control-next-icon:hover, 
