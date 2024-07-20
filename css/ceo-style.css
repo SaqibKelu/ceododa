@@ -258,6 +258,13 @@ strong {
   margin-bottom: 10px;
 }
 
+.custom-list-item a {
+  display: inline-block;
+  width: 90%; /* Adjust this value to fit your design */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /*New Badges*/
 /* .custom-block-body li > .badge {
