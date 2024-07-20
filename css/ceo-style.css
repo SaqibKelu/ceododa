@@ -260,7 +260,7 @@ strong {
 
 .custom-list-item a {
   display: inline-block;
-  width: 90%; /* Adjust this value to fit your design */
+  width: 86%; /* Adjust this value to fit your design */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
