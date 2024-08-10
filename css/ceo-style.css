@@ -393,6 +393,36 @@ ul li span.badge_new_notice {
   z-index: 9;
   padding-top: 0;
   padding-bottom: 0;
+  background: linear-gradient(
+        120deg, /* Angle of the gradient */
+        rgba(255, 153, 51, 0.8) 25%, /* Saffron with 80% opacity */
+      rgba(255, 153, 51, 0.863) 30%, /* Blend into white */
+      rgba(255, 255, 255, 0.7) 40%, /* White with 80% opacity */
+      rgba(255, 255, 255, 0.7) 50%, /* Blend into green */
+      rgba(72, 148, 65, 0.767) 60% /* Green with 80% opacity */
+  );
+    
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+}
+
+
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
 .navbar-brand {
