@@ -414,6 +414,13 @@ ul li span.badge_new_notice {
   
 }
 
+/* Navbar and image carousel gap fix */
+.sticky-wrapper {
+  height: auto !important; /* Ensure it resizes based on its content */
+  overflow: hidden;        /* Prevent extra space if content overflows */
+}
+
+
 .navbar-brand:hover {
   color: var(--primary-color);
   font-size: var(--h6-font-size);
