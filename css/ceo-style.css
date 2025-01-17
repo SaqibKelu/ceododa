@@ -401,6 +401,19 @@ ul li span.badge_new_notice {
   font-weight: var(--font-weight-bold);  
 }
 
+
+/* Media queries for small screens */
+@media (max-width: 768px) {
+  .navbar-brand img.logo {
+      width: 2.5em; /* Resize logo for mobile */
+  }
+
+  .navbar-brand .brand-text {
+      font-size: 1rem; /* Reduce text size */
+  }
+  
+}
+
 .navbar-brand:hover {
   color: var(--primary-color);
   font-size: var(--h6-font-size);
@@ -421,8 +434,8 @@ ul li span.badge_new_notice {
 }
 
 .logo {
-  width: 80px;
-  height: auto;
+  width: 3.5em;
+  height: 3em;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
