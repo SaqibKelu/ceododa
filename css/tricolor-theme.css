@@ -1,0 +1,38 @@
+:root {
+  --primary-color: #FF9933; /* Saffron for headings, links */
+  --secondary-color: #138808; /* Green for secondary elements */
+  --custom-btn-bg-color: #138808; /* Green for buttons */
+  --custom-btn-bg-hover-color: #FF9933; /* Saffron on button hover */
+  --marquee-bg-color: #FF9933; /* Saffron for marquee */
+}
+
+.navbar {
+  border-bottom: 2px solid #138808; /* Subtle green border */
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: #138808; /* Green for carousel controls */
+}
+
+.carousel-control-next-icon:hover,
+.carousel-control-prev-icon:hover {
+  background-color: #FF9933; /* Saffron on hover */
+}
+
+.badge {
+  background: #138808; /* Green for badges */
+}
+
+.site-footer-bottom {
+  background: #FFFFFF; /* White footer background */
+  border-top: 2px solid #FF9933; /* Subtle saffron border */
+}
+
+.social-icon-link {
+  background: #138808; /* Green for social icons */
+}
+
+.social-icon-link:hover {
+  background: #FF9933; /* Saffron on hover */
+}

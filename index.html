@@ -11,28 +11,31 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="images/favicon_io/site.webmanifest">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">     -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
         rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- CSS FILES -->
-    <link rel="stylesheet" href="css\bootstrap-icons.css">
-    <!-- <link rel="stylesheet" href="css\bootstrap.min.css"> -->    
-    <!-- owl carousel css -->
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.default.css">
-    <link rel="stylesheet" href="css\ceo-style.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="css/ceo-style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-        
- 
+    <!-- Tricolor Theme for Independence Day -->
+    <script>
+        const today = new Date();
+        const startDate = new Date(today.getFullYear(), 7, 10); // August 10
+        const endDate = new Date(today.getFullYear(), 7, 20); // August 20
+        if (today >= startDate && today <= endDate) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'css/tricolor-theme.css';
+            document.head.appendChild(link);
+        }
+    </script>
 </head>
-
 
 <body>
     <div id="headercontent"></div>
     <div id="navmenu"></div>
-    
     
     <!--carousel-->
     <main>
@@ -42,44 +45,37 @@
                     <div class="col-lg-12 col-12 p-0">
                         <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-inner">
-                                    <!-- <div class="carousel-item">
-                                        <img src="images\CEOIndependenceDayBanner.jpg" class="carousel-image img-fluid" alt="Independence Day Celebration 2024">
-                                    </div> -->
-                                    <div class="carousel-item">
-                                        <a href="https://innovateindia.mygov.in/ppc-2024/">
-                                            <img src="images\PPC2025.png" class="carousel-image img-fluid" alt="Pariksha Pe Charcha"></a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="images\DCmessage.png" class="carousel-image img-fluid" alt="Deputy Commissioner's Message">
-                                    </div>
-                                    <div class="carousel-item active">
-                                        <img src="images/CEOWebsiteLaunchBanner.png" class="carousel-image img-fluid" alt="CEO Doda Website Launch Message">
-                                    </div>                                    
-                                    <div class="carousel-item">
-                                        <a href="https://www.education.gov.in/national-education-policy">
-                                            <img src="images\NEPBanner.png" class="carousel-image img-fluid"
-                                                alt="New Education Policy"></a>
-                                    </div>
+                                <div class="carousel-item active">
+                                    <img src="images\ind2025.svg" class="carousel-image img-fluid" alt="Independence Day Celebration 2024">
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide"
-                                    data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#hero-slide"
-                                    data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+                                <div class="carousel-item">
+                                    <a href="https://innovateindia.mygov.in/ppc-2024/">
+                                        <img src="images/PPC2025.png" class="carousel-image img-fluid" alt="Pariksha Pe Charcha"></a>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/DCmessage.png" class="carousel-image img-fluid" alt="Deputy Commissioner's Message">
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.education.gov.in/national-education-policy">
+                                        <img src="images/NEPBanner.png" class="carousel-image img-fluid" alt="New Education Policy"></a>
+                                </div>
                             </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#hero-slide"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
                     </div>
                 </div>
         </section>
         <!--carousel ends-->
        
-        
         <!--Whats New Section-->
         <section class="section-padding">
             <div class="container">
@@ -95,33 +91,22 @@
                                 <div class="custom-block-body">
                                     <h5 class="mb-3">Notifications</h5>
                                     <ul class="custom-list mt-2">
-                                         <li class="custom-list-item">
-                                            <a href="resources\notifications\Allocation of CRC posts and counseling thereof.pdf">Allocation of CRC Posts and Counselling thereof.</a>
-                                            <span class="badge badge-primary">New</span>
-                                        </li> 
-                                         <li class="custom-list-item">
-                                            <a href="resources\notifications\FinalRevisedMeritListCRC.pdf">Final and Revised Merit List of Candidates for Engagement as Cluster Resource Coordinators for Teaching Support 2025-26-inviting objections (if any).</a>
+                                        <li class="custom-list-item">
+                                            <a href="resources/notifications/Allocation of CRC posts and counseling thereof.pdf">Allocation of CRC Posts and Counselling thereof.</a>
                                             <span class="badge badge-primary">New</span>
                                         </li> 
                                         <li class="custom-list-item">
-                                            <a href="resources\notifications\Final merit list of candidates for engagement as Cluster Resource Coordinators for teaching support .pdf">Final Merit List of Candidates for Engagement as Cluster Resource Coordinators for Teaching Support 2025-26 and Inviting of Objections thereof.
-                                            </a>
+                                            <a href="resources/notifications/FinalRevisedMeritListCRC.pdf">Final and Revised Merit List of Candidates for Engagement as Cluster Resource Coordinators for Teaching Support 2025-26-inviting objections (if any).</a>
+                                            <span class="badge badge-primary">New</span>
+                                        </li> 
+                                        <li class="custom-list-item">
+                                            <a href="resources/notifications/Final merit list of candidates for engagement as Cluster Resource Coordinators for teaching support .pdf">Final Merit List of Candidates for Engagement as Cluster Resource Coordinators for Teaching Support 2025-26 and Inviting of Objections thereof.</a>
                                             <span class="badge badge-primary">New</span>
                                         </li>
                                         <li class="custom-list-item">
                                             <a href="resources/notifications/CRC CORRIGENDUM.pdf">Hiring of CRCs for the year 2025-26-Corrigendum</a>
                                             <span class="badge badge-primary">New</span>
                                         </li>
-                                        
-                                       
-                                        
-                                          
-                                        
-                                         
-                                       
-                                       
-                                        
-                                                                                                              
                                     </ul>
                                 </div>
                                 <a href="notifications.html" class="custom-btn btn">View All</a>
@@ -129,7 +114,6 @@
                         </div>
                     </div>
                     <!--notification tab ends-->
-                   
                    
                     <!--orders tab-->
                     <div class="col-lg-6 col-md-6 col-12 mb-12 mb-lg-0">
@@ -139,26 +123,21 @@
                                     <h5 class="mb-3">Orders & Circulars</h5>
                                     <ul class="custom-list mt-2">
                                         <li class="custom-list-item">
-                                             <li class="custom-list-item">
-                                            <a href="resources\circulars\DODA_TEACHERS_ATD.pdf">Transfer and Posting of Teachers under online Annual Transfer Drive (ATD) 2024-25</a>
+                                            <a href="resources/circulars/DODA_TEACHERS_ATD.pdf">Transfer and Posting of Teachers under online Annual Transfer Drive (ATD) 2024-25</a>
                                             <span class="badge badge-primary">New</span>
                                         </li>
-                                            <a href="resources\circulars\Regulation of visits by Media.pdf">Regulation of Visits by Media, NGOs and Private Agencies to Government Schools-Corrigendum</a>
+                                        <li class="custom-list-item">
+                                            <a href="resources/circulars/Regulation of visits by Media.pdf">Regulation of Visits by Media, NGOs and Private Agencies to Government Schools-Corrigendum</a>
                                             <span class="badge badge-primary">New</span>
                                         </li> 
                                         <li class="custom-list-item">
-                                            <a href="resources\circulars\RegulationOfVisits.pdf">Regulation of Visits by Media, NGOs and Private Agencies to Government Schools</a>
+                                            <a href="resources/circulars/RegulationOfVisits.pdf">Regulation of Visits by Media, NGOs and Private Agencies to Government Schools</a>
                                             <span class="badge badge-primary">New</span>
                                         </li>
-                                         <li class="custom-list-item">
-                                            <a href="resources\circulars\attendance verification.pdf">Verification of Attendance of Employees from JKSED/Biometric for drawal of Salary</a>
+                                        <li class="custom-list-item">
+                                            <a href="resources/circulars/attendance verification.pdf">Verification of Attendance of Employees from JKSED/Biometric for drawal of Salary</a>
                                             <span class="badge badge-primary">New</span>
                                         </li>
-                                       
-                                        
-                                        
-                                        
-                                                               
                                     </ul>
                                 </div>
                                 <a href="orders.html" class="custom-btn btn">View All</a>
@@ -171,43 +150,6 @@
         </section>
         <!--Whats New Section Ends-->
 
-        <!--ceo-director section-->
-        <!-- <section class="about-section section-padding">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-5 col-md-5 col-12">
-                        <img src="images/ceo-front.jpeg"
-                            class="front-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-7 col-md-7 col-12">
-                        <div class="custom-text-block">
-                            <h2 class="mb-0">Sh. Parkash Lal Thappa</h2>
-
-                            <p class="text-muted mb-lg-4 mb-md-4">Chief Education Officer, Doda</p>
-
-                            <p>I want to extend my heartfelt congratulations to the team inolved for the successful launch of our office website! Your
-                                dedication and hard work have been truly remarkable. This
-                                milestone is a testament to your talent and commitment, and I'm excited to see the impact our website will have in
-                                our department.  </p>
-
-                        <p>Thank you for your exceptional teamwork and contributions</p>
-                        
-
-                            
-                        </div>
-                    </div>
-
-
-                   
-                   
-
-                </div>
-            </div>
-        </section> -->
-
-          <!--ceo-director section ends-->
         <!--stories section-->
         <section class="section-padding section-bg">
             <div class="container">
@@ -217,12 +159,11 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block-wrap">
-                            <img src="blog\review\review_index.jpeg"
+                            <img src="blog/review/review_index.jpeg"
                                 class="custom-block-image img-fluid" alt="">
                             <div class="custom-block">
                                 <div class="custom-block-body">
                                     <h5 class="mb-3">Review Meeting by DSEJ </h5>
-                                   
                                 </div>
                                 <a href="review_meeting.html" class="custom-btn btn">Details here</a>
                             </div>
@@ -230,12 +171,11 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block-wrap">
-                            <img src="images\causes\pmshri.JPG"
+                            <img src="images/causes/pmshri.JPG"
                                 class="custom-block-image img-fluid" alt="">
                             <div class="custom-block">
                                 <div class="custom-block-body">
                                     <h5 class="mb-3">PM Shri Tour</h5>
-                                   
                                 </div>
                                 <a href="pmshri.html" class="custom-btn btn">Details here</a>
                             </div>
@@ -243,34 +183,27 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block-wrap">
-                            <img src="blog\front.jpeg"
+                            <img src="blog/front.jpeg"
                                 class="custom-block-image img-fluid" alt="">
                             <div class="custom-block">
                                 <div class="custom-block-body">
                                     <h5 class="mb-3">Tour to IIT Kanpur</h5>
-                                  
                                 </div>
                                 <a href="iittour.html" class="custom-btn btn">Details here</a>
                             </div>
                         </div>
                     </div>
-                   
                 </div>
             </div>
         </section>
         <!--stories section ends-->
 
         <!--info section-->
-       
         <div id="initiatives"></div>
         <!--info section ends-->
       
-
         <!--sarkari logos-->
-    
         <div id="infosec"></div>
-     
-        
         <!--sarkari logos end-->
 
         <!--contact section-->
@@ -279,75 +212,42 @@
     </main>
     <div id="footcontent"></div>
     
-</body>
-
-    
     <!-- JAVASCRIPT FILES -->
     <script src="js/jquery.min.js"></script>
-    
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-        crossorigin="anonymous"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" 
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-
     <!-- Owl Carousel js -->
     <script src="js/owl.carousel.min.js"></script>
-    
     <script src="js/jquery.sticky.js"></script>
-    <!-- <script src="js/click-scroll.js"></script> -->
     
-    <!-- <script src="js/custom.js"></script> -->
-    
-
     <script type="text/javascript">
-
         $(function () {
-
             $('#headercontent').load('headcontent.html');
-            //using callback function to wait for navbar to load then make it sticky
             $('#navmenu').load('navmenu.html', function () {
                 $(".navbar").sticky({ topSpacing: 0 });
             });
             $('#initiatives').load('initiatives.html');
             $('#contact-us').load('contact.html');
-            //Callback to wait for footcontent to load and then update the year
             $('#footcontent').load('footcontent.html', function () {
                 $('#currentYear').text(new Date().getFullYear());
             });
-            //Callback to wait for infosec to load and then intialize the owl carousel
             $('#infosec').load('info.html', function () {
                 $(".owl-carousel").owlCarousel({
                     loop: true,
                     margin: 10,
                     responsiveClass: true,
                     autoplay: true,
-                    dots:false,
-                    nav:false,
+                    dots: false,
+                    nav: false,
                     responsive: {
-                        0: {
-                            items: 2,
-                        },
-                        600: {
-                            items: 4,
-                        },
-                        1000: {
-                            items: 5,
-                            loop: true
-                        }
+                        0: { items: 2 },
+                        600: { items: 4 },
+                        1000: { items: 5, loop: true }
                     }
                 });
             });
         });
-
     </script>
-   
-
-
 </html>
