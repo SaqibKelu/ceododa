@@ -287,7 +287,7 @@ async function loadJsonTable(config) {
 
             if (type === "whoswho") {
                 tr.innerHTML = `
-                    <td data-label="S.No">${index + 1}</td>
+                  <td data-label="S.No">${index + 1}</td>
                     <td data-label="Name">${item.name}</td>
                     <td data-label="Designation">${item.designation}</td>
                     <td data-label="Section">${item.section}</td>
