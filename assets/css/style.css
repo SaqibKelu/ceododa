@@ -1,0 +1,1198 @@
+/* =========================================================
+   CEO Doda - Modern Stylesheet (cleaned & consistent)
+   ========================================================= */
+
+/* Light Theme */
+:root {
+    --primary-color:    #0f766e;
+    --primary-dark:     #0c5d57;
+    --primary-light:    #e6f4f1;
+
+    --accent-color:     #ea580c;
+    --accent-light:     #f97316;    /* renamed for consistency */
+
+    --text-color:       #0f172a;
+    --text-muted:       #475569;
+    --text-light:       #64748b;
+
+    --bg-color:         #fafcff;
+    --bg-secondary:     #f1f5f9;
+    /* --bg-tertiary:      #e2e8f0;  ← unused → removed */
+
+    --navbar-bg:        rgba(250, 252, 255, 0.97);
+    --navbar-border:    rgba(241, 245, 249, 0.9);
+
+    --border-color:     #cbd5e1;
+    --border-subtle:    #e2e8f0;
+
+    --shadow-sm:        0 2px 10px rgba(15, 118, 110, 0.08);
+    --shadow-md:        0 8px 24px rgba(15, 118, 110, 0.14);
+
+    --radius:           12px;
+    --radius-lg:        16px;
+
+    --transition:       0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme */
+[data-bs-theme="dark"] {
+    --primary-color:    #2dd4bf;
+    --primary-dark:     #14b8a6;
+    --accent-color:     #fb923c;
+    --text-color:       #f1f5f9;
+    --text-muted:       #94a3b8;
+    --bg-color:         #0f172a;
+    --bg-secondary:     #1e293b;
+    --border-color:     #334155;
+    --navbar-bg:        rgba(15, 23, 42, 0.92);
+}
+
+/* BASE / RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 110px; /* adjusted for 90px logo */
+}
+
+/* Focus states */
+a:focus, button:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* NAVBAR */
+.navbar-custom {
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--navbar-border);
+    box-shadow: var(--shadow-sm);
+    padding: 0.9rem 0;
+    z-index: 1030;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+.navbar-custom.scrolled {
+    box-shadow: var(--shadow-md);
+    background-color: rgba(250, 252, 255, 0.98) !important;
+}
+
+[data-bs-theme="dark"] .navbar-custom {
+    background-color: var(--navbar-bg);
+}
+
+.navbar-brand .logo-img {
+    height: 90px;
+    width: auto;
+    max-width: 280px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .logo-img {
+    transform: scale(1.04);
+}
+
+/* Nav links */
+.nav-link {
+    font-weight: 600;
+    color: var(--text-color) !important;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: rgba(15, 118, 110, 0.08);
+    color: var(--primary-color) !important;
+}
+
+/* =========================================
+   HERO CAROUSEL – True Edge-to-Edge Banner
+   ========================================= */
+
+.hero-carousel-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f8f9fa; /* fallback while image loads */
+}
+
+/* Ensure carousel itself is full width */
+.hero-carousel-section .carousel,
+.hero-carousel-section .carousel-inner,
+.hero-carousel-section .carousel-item {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* The banner image itself */
+.hero-banner-img {
+    width: 100%;
+    height: auto;              /* KEY: prevents cropping */
+    display: block;
+    object-fit: contain;       /* Never crop */
+    object-position: center top;
+    background-color: #f8f9fa; /* prevents black/white bars flash */
+}
+
+/* On large screens, you can softly cap height if needed */
+@media (min-width: 992px) {
+    .hero-banner-img {
+        max-height: 560px;     /* adjust to your banner design */
+    }
+}
+
+/* Remove any accidental spacing below carousel */
+.hero-carousel-section .carousel {
+    margin-bottom: 0 !important;
+}
+
+
+/* NEWS TICKER */
+.news-ticker-section {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.news-label {
+    background-color: #0f766e;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    min-width: 180px;
+    text-align: center;
+}
+
+.ticker-wrapper {
+    height: 42px;
+    line-height: 42px;
+    overflow: hidden;
+}
+
+.ticker-track {
+    animation: tickerScroll 18s linear infinite;
+    white-space: nowrap;
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 4rem 0 1rem;
+    color: #1f2937;
+    font-size: 0.97rem;
+    font-weight: 500;
+}
+
+@keyframes tickerScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.ticker-wrapper:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+@media (max-width: 767px) {
+    .ticker-item {
+        padding: 0 2.5rem 0 1rem;
+        font-size: 0.93rem;
+    }
+}
+
+/* =========================================
+   About Section – Elegant, Subtle, Premium
+   ========================================= */
+
+.about-section {
+    background-color: #ffffff;
+}
+
+/* Small eyebrow heading */
+.about-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+/* Main title */
+.about-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1.2rem;
+}
+
+/* Lead paragraph */
+.about-lead {
+    font-size: 1.05rem;
+    color: #334155;
+    margin-bottom: 0.8rem;
+}
+
+/* Body text */
+.about-text {
+    font-size: 0.98rem;
+    color: #475569;
+    line-height: 1.7;
+}
+
+/* Soft, modern image treatment (not boxy) */
+.about-image-soft-wrap {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    background: #f8fafc;
+}
+
+/* Subtle offset accent behind image */
+.about-image-soft-wrap::before {
+    content: "";
+    position: absolute;
+    inset: -14px -14px 14px 14px;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 118, 110, 0.12),
+        rgba(234, 88, 12, 0.10)
+    );
+    border-radius: 22px;
+    z-index: 0;
+}
+
+.about-image-soft {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    transition: transform 0.6s ease;
+}
+
+.about-image-soft-wrap:hover .about-image-soft {
+    transform: scale(1.03);
+}
+
+/* Divider */
+.about-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #ea580c; /* accent */
+    margin: 1.8rem 0 1.6rem 0;
+    border-radius: 2px;
+}
+
+/* Stats – minimal, editorial style */
+.about-stats {
+    margin-top: 0.5rem;
+}
+
+.about-stat {
+    text-align: left;
+}
+
+.about-stat-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.1;
+}
+
+.about-stat-label {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 0.3rem;
+}
+
+/* Responsive tuning */
+@media (max-width: 767px) {
+    .about-title {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.8rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: #ea580c;           /* warm accent */
+    bottom: -12px;
+    left: 0;
+    border-radius: 2px;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #0f766e;
+    border-color: #0f766e;
+    font-weight: 600;
+    padding: 0.85rem 2.2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0c5d57;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15, 118, 110, 0.20);
+}
+
+/* =========================================
+   Latest Updates Section
+   - Cards
+   - Segmented Tabs
+   - Update Rows
+   - Badges
+   - Mobile-safe Action Area
+   ========================================= */
+
+/* Container alignment (optional, if used elsewhere) */
+.latest-updates-content {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   Updates Card
+   ========================================= */
+
+.updates-list-advanced {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: visible;              /* important: don't clip action button on mobile */
+    min-height: 260px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) {
+    .updates-list-advanced:hover {
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+    }
+}
+
+/* =========================================
+   Segmented Tabs (replaces .latest-updates-tabs)
+   ========================================= */
+
+.segmented-control {
+    display: inline-flex;
+    background: #e6f4f1;
+    border-radius: 999px;
+    padding: 0.25rem;
+    gap: 0.25rem;
+}
+
+/* Buttons */
+.segmented-control .seg-btn {
+    border: none;
+    background: transparent;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0f766e;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Active state */
+.segmented-control .seg-btn.active,
+.segmented-control .seg-btn[aria-selected="true"] {
+    background: linear-gradient(135deg, #0f766e, #0c5d57);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(15, 118, 110, 0.25);
+}
+
+/* Hover for inactive */
+.segmented-control .seg-btn:not(.active):hover {
+    background: rgba(15, 118, 110, 0.12);
+}
+
+/* =========================================
+   Update List Rows
+   ========================================= */
+
+.update-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 1.4rem;
+    border-bottom: 1px dashed #e2e8f0;
+    color: #1f2937;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+}
+
+.update-item:hover {
+    background-color: #f1f5f9;
+}
+
+.update-item:last-child {
+    border-bottom: none;
+}
+
+.update-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.96rem;
+    font-weight: 500;
+}
+
+.update-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+/* NEW badge */
+.badge-new {
+    background: #dc2626;
+    color: #ffffff;
+    font-size: 0.68rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+/* =========================================
+   Action Button Area (below each card)
+   ========================================= */
+
+.latest-updates-section .action-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.latest-updates-section .action-wrap .btn {
+    white-space: nowrap;
+}
+
+/* Extra spacing on very small screens */
+@media (max-width: 575.98px) {
+    .latest-updates-section .action-wrap {
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+/* =========================================
+   Initiatives / Schemes Section
+   ========================================= */
+
+.initiatives-section {
+    background-color: #ffffff;
+}
+
+/* Card */
+.initiative-card {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.2rem 0.8rem;
+    height: 100%;
+    transition: all 0.25s ease;
+    color: #0f172a;
+}
+
+.initiative-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    border-color: #cbd5e1;
+}
+
+/* Logo wrapper */
+.initiative-logo-wrap {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+}
+
+.initiative-logo {
+    max-height: 60px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Title */
+.initiative-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+    line-height: 1.3;
+}
+
+
+/* =========================================
+   Top Stories / Blog Highlights
+   ========================================= */
+
+.top-stories-section {
+    background-color: #f8fafc;
+}
+
+/* Card */
+.story-card {
+    display: block;
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #0f172a;
+    transition: all 0.25s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    border-color: #cbd5e1;
+}
+
+/* Image */
+.story-image-wrap {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: #e5e7eb;
+}
+
+.story-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.story-card:hover .story-image {
+    transform: scale(1.05);
+}
+
+/* Content */
+.story-content {
+    padding: 1.1rem 1.2rem 1.3rem 1.2rem;
+}
+
+.story-meta {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.story-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.story-excerpt {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+.story-readmore {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0f766e; /* primary */
+}
+
+
+/* =========================================
+   Contact & Connect – New Layout
+   ========================================= */
+
+.contact-section {
+    background-color: #f8fafc;
+}
+
+/* Top info bar */
+.contact-info-bar {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 1.2rem 1.2rem;
+}
+
+.contact-info-item {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+}
+
+.contact-info-item i {
+    font-size: 1.3rem;
+    color: #0f766e;
+    margin-top: 0.1rem;
+}
+
+.contact-info-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.contact-info-value {
+    font-size: 0.9rem;
+    color: #334155;
+    line-height: 1.5;
+}
+
+.contact-info-value a {
+    color: #0f766e;
+    text-decoration: none;
+}
+
+.contact-info-value a:hover {
+    text-decoration: underline;
+}
+
+/* Main split */
+.contact-main-split {
+    margin-top: 1rem;
+}
+
+/* Map */
+.contact-map-wrap {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+/* Social */
+.contact-social-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-block {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.social-block-header {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+}
+
+.social-block-body {
+    padding: 0;
+}
+
+
+/* =========================================
+   Footer – Modern, Institutional
+   ========================================= */
+
+.site-footer {
+    background-color: #0f172a; /* dark slate */
+    color: #e5e7eb;
+    margin-top: 3rem;
+}
+
+.footer-top {
+    padding: 3rem 0 2rem 0;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem 0;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+/* Blocks */
+.footer-block {
+    height: 100%;
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+.footer-title-sm {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    color: #ffffff;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+/* Links */
+.footer-links,
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+    margin-bottom: 0.45rem;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #2dd4bf; /* primary accent */
+}
+
+/* Social */
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    color: #ffffff;
+    margin-right: 0.4rem;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: #0f766e;
+    transform: translateY(-2px);
+}
+
+/* Meta */
+.footer-meta {
+    color: #94a3b8;
+}
+
+
+/* =========================================
+   Unified Data Tables – CEO Doda (FINAL FIX)
+   ========================================= */
+
+.data-table-wrap {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    padding: 1rem;
+    overflow: hidden;
+}
+
+/* Toolbar */
+.data-table-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.data-table-toolbar .left-tools,
+.data-table-toolbar .right-tools {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.data-table-toolbar input,
+.data-table-toolbar select {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+}
+
+/* Table (DESKTOP) */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    table-layout: fixed; /* stable desktop layout */
+}
+
+.data-table thead th {
+    background: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.7rem;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.data-table tbody td {
+    padding: 0.7rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.data-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* Column width control (DESKTOP ONLY) */
+.data-table th:nth-child(1),
+.data-table td:nth-child(1) {
+    width: 6%;
+}
+
+.data-table th:nth-child(2),
+.data-table td:nth-child(2) {
+    width: 52%; /* Title */
+}
+
+.data-table th:nth-child(3),
+.data-table td:nth-child(3) {
+    width: 20%; /* Number */
+    word-break: break-word;
+}
+
+.data-table th:nth-child(4),
+.data-table td:nth-child(4) {
+    width: 12%; /* Date */
+    white-space: nowrap;
+}
+
+.data-table th:nth-child(5),
+.data-table td:nth-child(5) {
+    width: 10%; /* View */
+    text-align: center;
+}
+
+/* Footer info */
+.data-table-footer {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* =========================================
+   Mobile: TRUE Card Layout (NO BREAKING TEXT)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Hide header completely */
+    .data-table thead {
+        display: none !important;
+    }
+
+    /* Disable fixed layout */
+    .data-table {
+        table-layout: auto !important;
+    }
+
+    /* Remove desktop widths */
+    .data-table th,
+    .data-table td {
+        width: auto !important;
+        max-width: 100% !important;
+    }
+
+    /* Convert to cards */
+    .data-table,
+    .data-table tbody,
+    .data-table tr,
+    .data-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .data-table tr {
+        margin-bottom: 0.8rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 0.8rem 0.9rem;
+        background: #ffffff;
+    }
+
+    .data-table td {
+        border: none;
+        padding: 0.45rem 0;
+        font-size: 0.85rem;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+    /* =========================================
+   Mobile Card Alignment Fixes
+   ========================================= */
+
+/* Default: left align all fields in mobile cards */
+@media (max-width: 768px) {
+    .data-table td {
+        text-align: left !important;
+    }
+}
+
+/* Only document tables: center the View icon if needed */
+@media (max-width: 768px) {
+    .table-documents td[data-label="View"] {
+        text-align: left; /* or center if you prefer icon centered */
+    }
+}
+
+
+    /* Labels (S.No, Title, Number, Date, View) */
+    .data-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 0.15rem;
+        white-space: nowrap; /* prevents N U M B E R / V I E W */
+    }
+
+    /* View icon alignment */
+    .data-table td[data-label="View"] {
+        text-align: left;
+    }
+}
+
+/* PDF icon in tables */
+.table-pdf-icon {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-pdf-icon:hover {
+    color: #b91c1c;
+}
+/* =========================================
+   CEO Panel (Who's Who Header)
+   ========================================= */
+
+.ceo-panel {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+/* Rectangular official photo */
+.ceo-photo-rect {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    border-radius: 8px;          /* subtle rounding, not circular */
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Name emphasis */
+.ceo-panel h3 {
+    font-weight: 800;
+    color: #0f172a;
+}
+
+/* Meta info rows */
+.ceo-meta-item {
+    font-size: 0.9rem;
+    color: #334155;
+    display: flex;
+    align-items: center;
+}
+
+.ceo-meta-item i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   Directory Tables (Who's Who, Staff Lists)
+   ========================================= */
+
+.data-table--directory {
+    table-layout: auto; /* let browser size columns naturally */
+}
+
+/* Remove fixed column widths ONLY for directory tables */
+.data-table--directory th,
+.data-table--directory td {
+    width: auto !important;
+    white-space: normal;
+}
+
+/* Slightly tighten padding for dense info */
+.data-table--directory th {
+    font-size: 0.75rem;
+}
+
+.data-table--directory td {
+    font-size: 0.88rem;
+}
+
+/* Improve long text wrapping (designation, email) */
+.data-table--directory td {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Optional: emphasize Name column */
+.data-table--directory td:nth-child(2) {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+
+
+/* =========================================
+   Stat Cards – Dashboard Style
+   ========================================= */
+
+.stat-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.4rem 1rem;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.stat-card-accent {
+    border-color: rgba(15, 118, 110, 0.3);
+    background: linear-gradient(180deg, #ffffff, #f1f9f8);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.stat-number {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+/* =========================================
+   Project Sections (RMS / IMS)
+   ========================================= */
+
+.project-content .lead {
+    font-size: 1.05rem;
+    color: #334155;
+}
+
+.feature-icon {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+}
+
+.project-img img {
+    width: 100%;
+    max-width: 600px;   /* desktop size */
+    height: auto;
+}
+
+@media (max-width: 991px) {
+    .project-img img {
+        max-width: 480px; /* tablet */
+    }
+}
+

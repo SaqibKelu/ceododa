@@ -1,0 +1,117 @@
+/* =========================================
+   Blog Article Page Styles
+   ========================================= */
+
+.blog-hero {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.blog-hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.blog-breadcrumb {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.blog-breadcrumb a {
+  color: #0f766e;
+  text-decoration: none;
+}
+
+.blog-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.blog-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+}
+
+.blog-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Action buttons */
+.blog-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-like.active {
+  background-color: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+}
+
+/* Content */
+.blog-content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #334155;
+}
+
+.blog-content h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.blog-content p {
+  margin-bottom: 1.1rem;
+}
+
+.blog-content ul {
+  margin-left: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.4rem;
+}
+
+/* Related posts */
+.related-card {
+  display: block;
+  text-decoration: none;
+  color: #0f172a;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.related-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.related-card .p-3 h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.related-card .p-3 p {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0;
+}

@@ -1,0 +1,114 @@
+<!-- Latest Updates – Two Panels with Contextual Actions -->
+<section id="latest-updates" class="latest-updates-section py-5 py-lg-6 bg-light">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <span class="about-eyebrow">Office Communications</span>
+      <h2 class="about-title">Latest Updates</h2>
+      <p class="text-muted mt-2">
+        Recent notifications, orders, circulars, and press releases issued by the office.
+      </p>
+    </div>
+
+    <!-- IMPORTANT: align-items-stretch -->
+    <div class="row g-4 align-items-stretch">
+
+      <!-- =========================
+           LEFT PANEL: Orders & Circulars
+           ========================= -->
+      <div class="col-12 col-lg-6 d-flex flex-column">
+
+        <div class="updates-list-advanced h-100">
+
+          <!-- Segmented Tabs -->
+          <div class="px-3 pt-3 pb-2">
+            <div class="segmented-control" role="tablist" aria-label="Orders and Circulars">
+              <button class="seg-btn active" data-bs-toggle="tab" data-bs-target="#tab-orders" type="button" role="tab">
+                Orders
+              </button>
+              <button class="seg-btn" data-bs-toggle="tab" data-bs-target="#tab-circulars" type="button" role="tab">
+                Circulars
+              </button>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="tab-content">
+
+            <div class="tab-pane fade show active" id="tab-orders" role="tabpanel">
+              <div class="updates-panel" id="ordersList">
+                <div class="text-center py-4 text-muted">Loading orders…</div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab-circulars" role="tabpanel">
+              <div class="updates-panel" id="circularsList">
+                <div class="text-center py-4 text-muted">Loading circulars…</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Action button ALWAYS visible & aligned -->
+        <div class="action-wrap mt-3 mt-auto">
+          <a href="orders.html" id="leftActionBtn" class="btn btn-outline-secondary btn-sm">
+            Show All Orders
+            <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- =========================
+           RIGHT PANEL: Notifications & Press
+           ========================= -->
+      <div class="col-12 col-lg-6 d-flex flex-column">
+
+        <div class="updates-list-advanced h-100">
+
+          <!-- Segmented Tabs -->
+          <div class="px-3 pt-3 pb-2">
+            <div class="segmented-control" role="tablist" aria-label="Notifications and Press Releases">
+              <button class="seg-btn active" data-bs-toggle="tab" data-bs-target="#tab-notifications" type="button" role="tab">
+                Notifications
+              </button>
+              <button class="seg-btn" data-bs-toggle="tab" data-bs-target="#tab-press" type="button" role="tab">
+                Press Releases
+              </button>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="tab-content">
+
+            <div class="tab-pane fade show active" id="tab-notifications" role="tabpanel">
+              <div class="updates-panel" id="notificationsList">
+                <div class="text-center py-4 text-muted">Loading notifications…</div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab-press" role="tabpanel">
+              <div class="updates-panel" id="pressList">
+                <div class="text-center py-4 text-muted">Loading press releases…</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Action button ALWAYS visible & aligned -->
+        <div class="action-wrap mt-3 mt-auto">
+          <a href="notifications.html" id="rightActionBtn" class="btn btn-outline-secondary btn-sm">
+            Show All Notifications
+            <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
