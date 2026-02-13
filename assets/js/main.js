@@ -20,7 +20,7 @@ function truncateTextByWords(text, maxLength = 80) {
 }
 
 // ───────────────────────────────────────────────
-// Load News Ticker from JSON
+// Load News Ticker from JSON (Improved Scrolling)
 // ───────────────────────────────────────────────
 async function loadNewsTicker() {
     const track = document.getElementById('newsTickerTrack');
@@ -39,6 +39,15 @@ async function loadNewsTicker() {
 
         track.innerHTML = '';
 
+        // Add items once
+        data.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'ticker-item';
+            div.textContent = item.text || item.Text || '';
+            track.appendChild(div);
+        });
+
+        // Duplicate items to ensure continuous scrolling (important for mobile)
         data.forEach(item => {
             const div = document.createElement('div');
             div.className = 'ticker-item';
@@ -51,6 +60,7 @@ async function loadNewsTicker() {
         track.innerHTML = `<div class="ticker-item">Unable to load announcements.</div>`;
     }
 }
+
 
 // ───────────────────────────────────────────────
 // Generic loader for Latest Updates (Top 5)

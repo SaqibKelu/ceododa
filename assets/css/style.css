@@ -215,12 +215,30 @@ a:focus, button:focus {
     animation-play-state: paused;
 }
 
+/* Mobile optimizations for news ticker */
 @media (max-width: 767px) {
+
+    .news-label {
+        min-width: 110px;        /* smaller label */
+        font-size: 0.6rem;
+        padding: 0.4rem 0.75rem !important;
+    }
+
+    .ticker-wrapper {
+        height: 36px;
+        line-height: 36px;
+    }
+
     .ticker-item {
-        padding: 0 2.5rem 0 1rem;
-        font-size: 0.93rem;
+        padding: 0 2rem 0 1rem;
+        font-size: 0.9rem;
+    }
+
+    .ticker-track {
+        animation-duration: 12s; /* faster on mobile */
     }
 }
+
 
 /* =========================================
    About Section – Elegant, Subtle, Premium
