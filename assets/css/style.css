@@ -529,10 +529,12 @@ a:focus, button:focus {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+   
 }
 
 .latest-updates-section .action-wrap .btn {
     white-space: nowrap;
+    margin-top: 10px;
 }
 
 /* Extra spacing on very small screens */
