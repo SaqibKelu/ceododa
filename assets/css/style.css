@@ -70,15 +70,18 @@ a:focus, button:focus {
 
 /* NAVBAR */
 .navbar-custom {
-    background-color: var(--navbar-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--navbar-border);
-    box-shadow: var(--shadow-sm);
+    background-color: rgba(250, 252, 255, 0.85); /* more transparent */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+    box-shadow: 0 4px 16px rgba(15, 118, 110, 0.08);
     padding: 0.9rem 0;
     z-index: 1030;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+    transition: background-color 0.35s ease, box-shadow 0.35s ease;
 }
+
+    
+
 
 .navbar-custom.scrolled {
     box-shadow: var(--shadow-md);
@@ -115,6 +118,13 @@ a:focus, button:focus {
     background-color: rgba(15, 118, 110, 0.08);
     color: var(--primary-color) !important;
 }
+@media (max-width: 991px) {
+    .navbar-brand .logo-img {
+        height: 56px;   /* try 52–60px if needed */
+        max-width: 200px;
+    }
+}
+
 
 /* =========================================
    HERO CAROUSEL – True Edge-to-Edge Banner
@@ -126,6 +136,7 @@ a:focus, button:focus {
     padding: 0;
     overflow: hidden;
     background-color: #f8f9fa; /* fallback while image loads */
+    
 }
 
 /* Ensure carousel itself is full width */
@@ -151,6 +162,7 @@ a:focus, button:focus {
 @media (min-width: 992px) {
     .hero-banner-img {
         max-height: 560px;     /* adjust to your banner design */
+       
     }
 }
 
