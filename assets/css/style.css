@@ -191,11 +191,15 @@ a:focus, button:focus {
     height: 42px;
     line-height: 42px;
     overflow: hidden;
+    position: relative;
 }
 
 .ticker-track {
-    animation: tickerScroll 18s linear infinite;
+    display: flex;
+    width: max-content;              /* IMPORTANT: let content define width */
     white-space: nowrap;
+    animation: tickerScroll 18s linear infinite;
+    will-change: transform;          /* smoother on mobile */
 }
 
 .ticker-item {
@@ -208,18 +212,18 @@ a:focus, button:focus {
 
 @keyframes tickerScroll {
     0%   { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(-50%); }  /* move by half (because duplicated) */
 }
 
 .ticker-wrapper:hover .ticker-track {
     animation-play-state: paused;
 }
 
-/* Mobile optimizations for news ticker */
+/* Mobile optimizations */
 @media (max-width: 767px) {
 
     .news-label {
-        min-width: 110px;        /* smaller label */
+        min-width: 110px;
         font-size: 0.6rem;
         padding: 0.4rem 0.75rem !important;
     }
@@ -235,9 +239,10 @@ a:focus, button:focus {
     }
 
     .ticker-track {
-        animation-duration: 12s; /* faster on mobile */
+        animation-duration: 25s; /* faster on mobile */
     }
 }
+
 
 
 /* =========================================
