@@ -4,70 +4,86 @@
     "name": "Dr. Anis Ahmed",
     "designation": "District Education Planning Officer",
     "section": "Planning",
-    "contact": "7051431032",
+    "contact": "+91 7051431032",
     "email": "psceododa@gmail.com",
     "photo": "assets/staff-images/depo.JPG"
   },
   {
-    "name": "Tanveer Ahmed",
-    "designation": "Statistical Officer",
+    "name": "Mr. Farooq Khan",
+    "designation": "Assistant Director",
     "section": "Planning",
-    "contact": "7889373807",
+    "contact": "+91 8492975979",
     "email": "psceododa@gmail.com",
     "photo": "assets/staff-images/tanveerahmed.jpg"
   },
   {
-    "name": "Sandeep Kumar",
+    "name": "Mr. Tanveer Ahmed",
+    "designation": "Statistical Officer",
+    "section": "Planning",
+    "contact": "+91 7889373807",
+    "email": "psceododa@gmail.com",
+    "photo": "assets/staff-images/tanveerahmed.jpg"
+  },
+  {
+    "name": "Mr. Sandeep Kumar",
     "designation": "Junior Scale Stenographer (P.A to CEO)",
     "section": "P.A Section",
-    "contact": "01996299028",
+    "contact": "01996 299028",
     "email": "ceo-doda@jk.gov.in",
     "photo": "assets/staff-images/SANDEEP.jpeg"
   },
   {
-    "name": "Riaz Ahmed",
+    "name": "Mr. Riaz Ahmed",
     "designation": "Senior Assistant",
     "section": "Establishment",
-    "contact": "8803730635",
+    "contact": "+91 8803730635",
     "email": "esttteachingceododa@gmail.com",
     "photo": "assets/staff-images/riazsr.jpeg"
   },
   {
-    "name": "Mubarak Ali",
+    "name": "Mr. Singharsh Katal",
+    "designation": "Junior Assistant",
+    "section": "Establishment",
+    "contact": "+91 7006276098",
+    "email": "esttteachingceododa@gmail.com",
+    "photo": "assets/staff-images/riazsr.jpeg"
+  },
+  {
+    "name": "Mr. Mubarak Ali",
     "designation": "Senior Assistant",
     "section": "Gazetted",
-    "contact": "01996234771",
+    "contact": "+91 7889616251",
     "email": "ceododagaz@gmail.com",
     "photo": "assets/staff-images/mubarak.jpeg"
   },
   {
-    "name": "Rashid Yasin",
-    "designation": "Junior Assistant",
+    "name": "Mr. Rashid Yasin",
+    "designation": "Senior Assistant",
     "section": "Non-Teaching, ReT, RTI",
-    "contact": "9596977422",
+    "contact": "+91 9596977422",
     "email": "ceododa1ret@gmail.com",
     "photo": "assets/staff-images/rashidyasin.jpeg"
   },
   
   {
-    "name": "Kavita Thakur",
+    "name": "Ms. Kavita Thakur",
     "designation": "I/C Legal Section",
     "section": "Legal",
-    "contact": "9796000097",
+    "contact": "+91 9796000097",
     "email": "ceolegal123@gmail.com",
     "photo": "assets/staff-images/kavita.jpeg"
   },
  
   {
-    "name": "KD Shah",
+    "name": "Mr. KD Shah",
     "designation": "Auditor",
     "section": "Samagra",
-    "contact": "9906033600",
+    "contact": "+91 9906033600",
     "email": "auditorssadoda@gmail.com",
     "photo": "assets/staff-images/KD.png"
   },
   {
-    "name": "Majid Anjum",
+    "name": "Mr. Majid Anjum",
     "designation": "District Programmer",
     "section": "Samagra",
     "contact": "7889485609",
@@ -75,68 +91,69 @@
     "photo": "assets/staff-images/majid.jpeg"
   },
   {
-    "name": "Saqib Ahmed",
-    "designation": "Junior Assistant",
-    "section": "IT (Website)",
-    "contact": "7006410789",
-    "email": "saqib.kelu@jk.gov.in",
-    "photo": "assets/staff-images/saqib.jpg"
-  },
-  {
-    "name": "Mohd Wasim Malik",
-    "designation": "Junior Assistant",
+    "name": "Mr. Mohd Wasim Malik",
+    "designation": "Senior Assistant",
     "section": "Accounts",
-    "contact": "9622114015",
+    "contact": "+91 9622114015",
     "email": "mohd.wasim@jk.gov.in",
     "photo": "assets/staff-images/wasim.JPG"
   },
+  {
+    "name": "Mr. Saqib Ahmed",
+    "designation": "Junior Assistant",
+    "section": "IT (Website)",
+    "contact": "+91 7006410789",
+    "email": "saqib.kelu@jk.gov.in",
+    "photo": "assets/staff-images/saqib.jpg"
+  },
+  
    {
-    "name": "Neeraj Anotray",
+    "name": "Mr. Neeraj Anotray",
     "designation": "Junior Assistant",
     "section": "Permission",
-    "contact": "01996234771",
+    "contact": "01996 234771",
     "email": "premissionsectionceododa@gmail.com",
     "photo": "assets/staff-images/neeraj.jpeg"
   },
   
   {
-    "name": "Mohd Ishaq",
+    "name": "Mr. Mohd Ishaq",
     "designation": "DEO",
     "section": "Establishment (Private Schools)",
-    "contact": "01996234771",
+    "contact": "01996 234771",
     "email": "ceododa1@gmail.com",
     "photo": "assets/staff-images/ishaq.JPG"
   },
   {
-    "name": "Muzaffar Iqbal",
+    "name": "Mr. Muzaffar Iqbal",
     "designation": "Junior Assistant",
     "section": "Scholarship",
-    "contact": "7780894130",
+    "contact": "+91 7780894130",
     "email": "nspdoda@gmail.com",
     "photo": "assets/staff-images/muzafar.jpeg"
   },
   {
-    "name": "Ajay Kumar",
+    "name": "Mr. Ajay Kumar",
     "designation": "Junior Assistant",
     "section": "Examination, Election",
-    "contact": "01996234771",
+    "contact": "01996 234771",
     "email": "ajay.bhagat9600@jk.gov.in",
     "photo": "assets/staff-images/ajay.jpeg"
   },
   {
-    "name": "Mohd Syed",
+    "name": "Mr. Mohd Syed",
     "designation": "Driver",
     "section": "Transport",
-    "contact": "9797497124",
+    "contact": "+91 9797497124",
     "email": "-",
     "photo": "assets/staff-images/syed.JPG"
   },
   {
-    "name": "Nazeema Banoo",
+    "name": "Ms. Nazeema Banoo",
     "designation": "MTS",
     "section": "Receipt/Dispatch",
-    "contact": "01996234771",
-    "email": "ceo-doda@jk.gov.in",
+    "contact": "01996 234771",
+    "email": "-",
     "photo": "assets/staff-images/nazeema.JPG"
   }
 ]
