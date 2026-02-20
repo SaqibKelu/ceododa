@@ -257,7 +257,7 @@ async function loadJsonTable(config) {
             const title  = item.title || item.Title || "";
             const number = item.number || item.Number || "-";
             const date   = item.date || item.Date || "";
-            let file     = item.file || item.Link || "";
+            let file = item.file || item.link || item.Link || "";
 
             if (file && file.includes("/")) file = file.split("/").pop();
 
