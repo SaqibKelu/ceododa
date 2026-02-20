@@ -87,6 +87,16 @@ function initDataTable(wrapperId, options = {}) {
         return parseInt(pageSizeSelect.value, 10);
     }
 
+    function scanRows() {
+        allRows = Array.from(tbody.querySelectorAll("tr"));
+        filteredRows = [...allRows];
+
+        // Populate year dropdown dynamically from data
+        if (settings.enableDateFilters && yearSelect) {
+            yearSelect.innerHTML = `<option value="">All Years</option>` + generateYearOptionsFromRows(allRows);
+        }
+    }
+
     function applyFilters() {
         const search = searchInput.value.toLowerCase();
         const year = settings.enableDateFilters && yearSelect ? yearSelect.value : "";
@@ -177,20 +187,18 @@ function initDataTable(wrapperId, options = {}) {
         pageSizeSelect.addEventListener("change", applyFilters);
     }
 
-    function init() {
-        allRows = Array.from(tbody.querySelectorAll("tr"));
-        filteredRows = [...allRows];
+    // Initial bind
+    bindEvents();
 
-        // Populate year dropdown dynamically from data
-        if (settings.enableDateFilters && yearSelect) {
-            yearSelect.innerHTML = `<option value="">All Years</option>` + generateYearOptionsFromRows(allRows);
-        }
+    // Public refresh hook (important for JSON-loaded tables)
+    wrapper._dtRefresh = function () {
+        scanRows();
+        applyFilters();
+    };
 
-        bindEvents();
-        renderTable();
-    }
-
-    setTimeout(init, 50);
+    // First scan (in case rows already exist)
+    scanRows();
+    renderTable();
 }
 
 // =========================================
@@ -203,7 +211,7 @@ function generateYearOptionsFromRows(rows) {
         const dateAttr = row.getAttribute("data-date"); // YYYY-MM-DD
         if (dateAttr) {
             const y = dateAttr.split("-")[0];
-            if (parseInt(y, 10) >= 2024) {   // enforce 2024+ if needed
+            if (parseInt(y, 10) >= 2024) {
                 years.add(y);
             }
         }
@@ -222,7 +230,6 @@ function generateYearOptionsFromRows(rows) {
 // =========================================
 // JSON → Table Loader (ALL TYPES)
 // =========================================
-
 async function loadJsonTable(config) {
     const { jsonPath, tableBodyId, type, resourcePath = "" } = config;
 
@@ -252,7 +259,7 @@ async function loadJsonTable(config) {
             const date   = item.date || item.Date || "";
             let file     = item.file || item.Link || "";
 
-            if (file.includes("/")) file = file.split("/").pop();
+            if (file && file.includes("/")) file = file.split("/").pop();
 
             if (date) {
                 const [d, m, y] = date.split("-");
@@ -287,17 +294,23 @@ async function loadJsonTable(config) {
 
             if (type === "whoswho") {
                 tr.innerHTML = `
-                  <td data-label="S.No">${index + 1}</td>
-                    <td data-label="Name">${item.name}</td>
-                    <td data-label="Designation">${item.designation}</td>
-                    <td data-label="Section">${item.section}</td>
-                    <td data-label="Contact">${item.contact}</td>
-                    <td data-label="Email">${item.email}</td>
+                    <td data-label="S.No">${index + 1}</td>
+                    <td data-label="Name">${item.name || ""}</td>
+                    <td data-label="Designation">${item.designation || ""}</td>
+                    <td data-label="Section">${item.section || ""}</td>
+                    <td data-label="Contact">${item.contact || ""}</td>
+                    <td data-label="Email">${item.email || ""}</td>
                 `;
             }
 
             tbody.appendChild(tr);
         });
+
+        // Auto-refresh DataTable if present
+        const wrapper = tbody.closest(".data-table-wrap");
+        if (wrapper && wrapper._dtRefresh) {
+            wrapper._dtRefresh();
+        }
 
     } catch (err) {
         console.error(err);

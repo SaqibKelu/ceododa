@@ -109,7 +109,7 @@
   
    {
     "name": "Mr. Neeraj Anotray",
-    "designation": "Junior Assistant",
+    "designation": "Senior Assistant",
     "section": "Permission",
     "contact": "01996 234771",
     "email": "premissionsectionceododa@gmail.com",
@@ -134,26 +134,10 @@
   },
   {
     "name": "Mr. Ajay Kumar",
-    "designation": "Junior Assistant",
+    "designation": "Senior Assistant",
     "section": "Examination, Election",
     "contact": "01996 234771",
     "email": "ajay.bhagat9600@jk.gov.in",
     "photo": "assets/staff-images/ajay.jpeg"
-  },
-  {
-    "name": "Mr. Mohd Syed",
-    "designation": "Driver",
-    "section": "Transport",
-    "contact": "+91 9797497124",
-    "email": "-",
-    "photo": "assets/staff-images/syed.JPG"
-  },
-  {
-    "name": "Ms. Nazeema Banoo",
-    "designation": "MTS",
-    "section": "Receipt/Dispatch",
-    "contact": "01996 234771",
-    "email": "-",
-    "photo": "assets/staff-images/nazeema.JPG"
   }
 ]
