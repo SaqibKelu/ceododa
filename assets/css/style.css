@@ -127,7 +127,7 @@ a:focus, button:focus {
 
 
 /* =========================================
-   HERO CAROUSEL – True Edge-to-Edge Banner
+   HERO CAROUSEL – STABLE + WORKING
    ========================================= */
 
 .hero-carousel-section {
@@ -135,11 +135,10 @@ a:focus, button:focus {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #f8f9fa; /* fallback while image loads */
-    
+    background-color: #f8f9fa;
 }
 
-/* Ensure carousel itself is full width */
+/* Structure */
 .hero-carousel-section .carousel,
 .hero-carousel-section .carousel-inner,
 .hero-carousel-section .carousel-item {
@@ -148,25 +147,38 @@ a:focus, button:focus {
     padding: 0;
 }
 
-/* The banner image itself */
+/* Prevent overflow artifacts */
+.carousel-inner {
+    overflow: hidden;
+}
+
+/* GPU rendering fix (safe) */
+.carousel-item {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Slide wrapper */
+.hero-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image — NO cropping */
 .hero-banner-img {
     width: 100%;
-    height: auto;              /* KEY: prevents cropping */
+    height: auto;
     display: block;
-    object-fit: contain;       /* Never crop */
-    object-position: center top;
-    background-color: #f8f9fa; /* prevents black/white bars flash */
 }
 
-/* On large screens, you can softly cap height if needed */
-@media (min-width: 992px) {
-    .hero-banner-img {
-        max-height: 560px;     /* adjust to your banner design */
-       
-    }
+/* Slightly smoother transition (SAFE override) */
+.carousel-fade .carousel-item {
+    transition: opacity 0.6s ease-in-out;
 }
 
-/* Remove any accidental spacing below carousel */
+/* Remove spacing */
 .hero-carousel-section .carousel {
     margin-bottom: 0 !important;
 }
