@@ -41,19 +41,19 @@ async function loadNewsTicker() {
 
         // Add items once
         data.forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'ticker-item';
-            div.textContent = item.text || item.Text || '';
-            track.appendChild(div);
-        });
+    const div = document.createElement('div');
+    div.className = 'ticker-item';
+    div.innerHTML = item.text || item.Text || ''; // ✅ FIX
+    track.appendChild(div);
+});
 
         // Duplicate items to ensure continuous scrolling (important for mobile)
-        data.forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'ticker-item';
-            div.textContent = item.text || item.Text || '';
-            track.appendChild(div);
-        });
+       data.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'ticker-item';
+    div.innerHTML = item.text || item.Text || ''; // ✅ FIX
+    track.appendChild(div);
+});
 
     } catch (error) {
         console.error('Error loading news ticker:', error);

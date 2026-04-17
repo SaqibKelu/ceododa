@@ -1,4 +1,5 @@
 [
-  { "text": "The AASHA web app has been officially launched, link to access the app: https://aasha.ceododa.in. Surveys in all zones to be completed by April 30, 2026" }
-
+  {
+    "text": "The AASHA web app has been officially launched. Click the <a href=\"https://aasha.ceododa.in\" target=\"_blank\">link</a> to access the app. Surveys at all Zonal Levels to be completed by April 30, 2026"
+  }
 ]
