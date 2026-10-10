@@ -1,0 +1,12 @@
+{
+  "_displayModeDescription": "Controls how often the popup appears: session = once per browser tab/session, persistent = once per visitor until storageKey changes, always = every page load.",
+  "_displayModeAllowedValues": ["session", "persistent", "always"],
+  "enabled": true,
+  "displayMode": "always",
+  "storageKey": "ceododa-launch-alert-crc-2026-10-10",
+  "title": "IMPORTANT NOTICE REGARDING CRC RECRUITMENT",
+  "message": "All concerned candidates are hereby informed that the previous advertisement issued for the engagement of CRCs, along with all corrigenda issued in connection with the said advertisement, stands cancelled and withdrawn.\n\nA fresh advertisement, Advertisement No. 2, CEO Doda/2026, dated 10-10-2026, has now been issued.\n\nAccordingly, all candidates who had previously applied for the CRC positions are requested to submit their applications afresh through the Google Form link provided below. All eligible and interested candidates are also invited to apply in accordance with the terms and conditions of the new advertisement.\n\nAll candidates are requested to take note of this notice and submit their applications again through the above-mentioned link.\n\nPlease treat this notice as urgent and important.",
+  "buttonText": "Close Notice",
+  "ctaText": "Apply Through Google Form",
+  "ctaUrl": "https://forms.gle/qixTv2uGJ1zuuB8j8"
+}
