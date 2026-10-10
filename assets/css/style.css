@@ -191,6 +191,46 @@ a:focus, button:focus {
     border-color: var(--primary-dark);
 }
 
+.launch-alert-launcher {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1045;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(185, 28, 28, 0.68);
+    border-radius: 999px;
+    background-color: #dc2626;
+    color: #ffffff;
+    box-shadow: 0 14px 32px rgba(185, 28, 28, 0.26);
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(18px);
+    pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+
+.launch-alert-launcher.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.launch-alert-launcher:hover,
+.launch-alert-launcher:focus {
+    color: #ffffff;
+    background-color: #b91c1c;
+    box-shadow: 0 18px 36px rgba(127, 29, 29, 0.32);
+}
+
+.launch-alert-launcher i {
+    font-size: 1rem;
+    color: #fecaca;
+}
+
 @media (max-width: 576px) {
     .launch-alert-modal .modal-header,
     .launch-alert-modal .modal-body,
@@ -217,6 +257,26 @@ a:focus, button:focus {
     .launch-alert-message p {
         font-size: 0.95rem;
         line-height: 1.65;
+    }
+
+    .launch-alert-launcher {
+        right: 0.75rem;
+        bottom: 0.75rem;
+        left: auto;
+        width: auto;
+        max-width: calc(100vw - 1.5rem);
+        justify-content: center;
+        gap: 0.45rem;
+        padding: 0.68rem 0.88rem;
+        border-width: 1px;
+        border-radius: 999px;
+        font-size: 0.92rem;
+        line-height: 1.2;
+        box-shadow: 0 10px 20px rgba(185, 28, 28, 0.22);
+    }
+
+    .launch-alert-launcher i {
+        font-size: 0.92rem;
     }
 }
 

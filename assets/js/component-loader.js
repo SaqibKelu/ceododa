@@ -158,6 +158,42 @@ function buildLaunchAlertModal(config) {
     return modal;
 }
 
+function buildLaunchAlertLauncher(config) {
+    const existingLauncher = document.getElementById('launchAlertLauncher');
+    if (existingLauncher) return existingLauncher;
+
+    const launcher = document.createElement('button');
+    launcher.type = 'button';
+    launcher.id = 'launchAlertLauncher';
+    launcher.className = 'launch-alert-launcher';
+    launcher.setAttribute('aria-label', 'Reopen notice');
+    launcher.title = config.title || 'Important Notice';
+    launcher.innerHTML = `
+        <i class="bi bi-pin-angle-fill" aria-hidden="true"></i>
+        <span>Recruitment Notice</span>
+    `;
+
+    document.body.appendChild(launcher);
+    return launcher;
+}
+
+function initializeLaunchAlertMinimizeBehavior(modalElement, modal, config) {
+    if (modalElement.dataset.minimizeReady === 'true') return;
+
+    const launcher = buildLaunchAlertLauncher(config);
+    const hideLauncher = () => launcher.classList.remove('is-visible');
+    const showLauncher = () => launcher.classList.add('is-visible');
+
+    launcher.addEventListener('click', () => {
+        hideLauncher();
+        modal.show();
+    });
+
+    modalElement.addEventListener('show.bs.modal', hideLauncher);
+    modalElement.addEventListener('hidden.bs.modal', showLauncher);
+    modalElement.dataset.minimizeReady = 'true';
+}
+
 function wasLaunchAlertShown(storageKey) {
     try {
         return window.sessionStorage.getItem(storageKey) === 'shown';
@@ -215,8 +251,15 @@ function markLaunchAlertState(displayMode, storageKey) {
     }
 }
 
+function isHomePage() {
+    const pathname = window.location.pathname || '';
+    return pathname === '/' || pathname.endsWith('/index.html') || pathname.endsWith('/index.htm');
+}
+
 async function showLaunchAlertOncePerSession() {
     try {
+        if (!isHomePage()) return;
+
         const config = await loadLaunchAlertConfig();
         if (!config?.enabled) return;
 
@@ -238,6 +281,7 @@ async function showLaunchAlertOncePerSession() {
             backdrop: 'static',
             keyboard: true
         });
+        initializeLaunchAlertMinimizeBehavior(modalElement, modal, config);
         modal.show();
     } catch (error) {
         console.error('Error showing launch alert:', error);
