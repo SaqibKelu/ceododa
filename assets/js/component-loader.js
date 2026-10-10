@@ -178,9 +178,9 @@ function buildLaunchAlertLauncher(config) {
 }
 
 function initializeLaunchAlertMinimizeBehavior(modalElement, modal, config) {
-    if (modalElement.dataset.minimizeReady === 'true') return;
-
     const launcher = buildLaunchAlertLauncher(config);
+    if (modalElement.dataset.minimizeReady === 'true') return launcher;
+
     const hideLauncher = () => launcher.classList.remove('is-visible');
     const showLauncher = () => launcher.classList.add('is-visible');
 
@@ -192,6 +192,7 @@ function initializeLaunchAlertMinimizeBehavior(modalElement, modal, config) {
     modalElement.addEventListener('show.bs.modal', hideLauncher);
     modalElement.addEventListener('hidden.bs.modal', showLauncher);
     modalElement.dataset.minimizeReady = 'true';
+    return launcher;
 }
 
 function wasLaunchAlertShown(storageKey) {
@@ -252,8 +253,8 @@ function markLaunchAlertState(displayMode, storageKey) {
 }
 
 function isHomePage() {
-    const pathname = window.location.pathname || '';
-    return pathname === '/' || pathname.endsWith('/index.html') || pathname.endsWith('/index.htm');
+    // URL paths vary on GitHub Pages; the hero placeholder exists only on the homepage.
+    return Boolean(document.getElementById('hero-placeholder'));
 }
 
 async function showLaunchAlertOncePerSession() {
@@ -265,12 +266,13 @@ async function showLaunchAlertOncePerSession() {
 
         const storageKey = config.storageKey || 'ceododa-launch-alert';
         const displayMode = config.displayMode || 'session';
-        if (!shouldShowLaunchAlert(displayMode, storageKey)) return;
+        const autoShow = shouldShowLaunchAlert(displayMode, storageKey);
 
         const modalElement = buildLaunchAlertModal(config);
-        markLaunchAlertState(displayMode, storageKey);
 
         if (!window.bootstrap?.Modal) {
+            if (!autoShow) return;
+            markLaunchAlertState(displayMode, storageKey);
             modalElement.classList.add('show');
             modalElement.style.display = 'block';
             document.body.classList.add('modal-open');
@@ -281,8 +283,14 @@ async function showLaunchAlertOncePerSession() {
             backdrop: 'static',
             keyboard: true
         });
-        initializeLaunchAlertMinimizeBehavior(modalElement, modal, config);
-        modal.show();
+        const launcher = initializeLaunchAlertMinimizeBehavior(modalElement, modal, config);
+
+        if (autoShow) {
+            markLaunchAlertState(displayMode, storageKey);
+            modal.show();
+        } else {
+            launcher.classList.add('is-visible');
+        }
     } catch (error) {
         console.error('Error showing launch alert:', error);
     }
