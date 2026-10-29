@@ -94,207 +94,207 @@ function sanitizeUrl(url) {
     return '';
 }
 
-async function loadLaunchAlertConfig() {
-    const response = await fetch('assets/data/site-alert.json', { cache: 'no-store' });
-    if (!response.ok) {
-        throw new Error('Failed to load launch alert configuration');
-    }
+// async function loadLaunchAlertConfig() {
+//     const response = await fetch('assets/data/site-alert.json', { cache: 'no-store' });
+//     if (!response.ok) {
+//         throw new Error('Failed to load launch alert configuration');
+//     }
 
-    return response.json();
-}
+//     return response.json();
+// }
 
-function buildLaunchAlertModal(config) {
-    const existingModal = document.getElementById('launchAlertModal');
-    if (existingModal) return existingModal;
+// function buildLaunchAlertModal(config) {
+//     const existingModal = document.getElementById('launchAlertModal');
+//     if (existingModal) return existingModal;
 
-    const modal = document.createElement('div');
-    modal.className = 'modal fade launch-alert-modal';
-    modal.id = 'launchAlertModal';
-    modal.tabIndex = -1;
-    modal.setAttribute('aria-labelledby', 'launchAlertTitle');
-    modal.setAttribute('aria-hidden', 'true');
+//     const modal = document.createElement('div');
+//     modal.className = 'modal fade launch-alert-modal';
+//     modal.id = 'launchAlertModal';
+//     modal.tabIndex = -1;
+//     modal.setAttribute('aria-labelledby', 'launchAlertTitle');
+//     modal.setAttribute('aria-hidden', 'true');
 
-    const title = config.title ? escapeHtml(config.title) : 'Important Notice';
-    const message = formatAlertMessage(config.message);
-    const buttonText = escapeHtml(config.buttonText || 'Close');
-    const ctaText = escapeHtml(config.ctaText || 'Open Link');
-    const ctaUrl = sanitizeUrl(config.ctaUrl);
-    const ctaMarkup = ctaUrl
-        ? `<a class="btn btn-warning launch-alert-cta" href="${ctaUrl}" target="_blank" rel="noopener">
-                <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
-                <span>${ctaText}</span>
-           </a>`
-        : '';
+//     const title = config.title ? escapeHtml(config.title) : 'Important Notice';
+//     const message = formatAlertMessage(config.message);
+//     const buttonText = escapeHtml(config.buttonText || 'Close');
+//     const ctaText = escapeHtml(config.ctaText || 'Open Link');
+//     const ctaUrl = sanitizeUrl(config.ctaUrl);
+//     const ctaMarkup = ctaUrl
+//         ? `<a class="btn btn-warning launch-alert-cta" href="${ctaUrl}" target="_blank" rel="noopener">
+//                 <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+//                 <span>${ctaText}</span>
+//            </a>`
+//         : '';
 
-    modal.innerHTML = `
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="launch-alert-title-wrap">
-                        <span class="launch-alert-badge">
-                            <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
-                            <span>Official Alert</span>
-                        </span>
-                        <h2 class="modal-title h5 mb-0" id="launchAlertTitle">${title}</h2>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="launch-alert-lead">
-                        <i class="bi bi-megaphone-fill" aria-hidden="true"></i>
-                        <span>Please review the following recruitment notice carefully.</span>
-                    </div>
-                    <div class="launch-alert-message">${message}</div>
-                </div>
-                <div class="modal-footer">
-                    ${ctaMarkup}
-                    <button type="button" class="btn btn-primary launch-alert-close" data-bs-dismiss="modal">${buttonText}</button>
-                </div>
-            </div>
-        </div>
-    `;
+//     modal.innerHTML = `
+//         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+//             <div class="modal-content">
+//                 <div class="modal-header">
+//                     <div class="launch-alert-title-wrap">
+//                         <span class="launch-alert-badge">
+//                             <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+//                             <span>Official Alert</span>
+//                         </span>
+//                         <h2 class="modal-title h5 mb-0" id="launchAlertTitle">${title}</h2>
+//                     </div>
+//                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+//                 </div>
+//                 <div class="modal-body">
+//                     <div class="launch-alert-lead">
+//                         <i class="bi bi-megaphone-fill" aria-hidden="true"></i>
+//                         <span>Please review the following recruitment notice carefully.</span>
+//                     </div>
+//                     <div class="launch-alert-message">${message}</div>
+//                 </div>
+//                 <div class="modal-footer">
+//                     ${ctaMarkup}
+//                     <button type="button" class="btn btn-primary launch-alert-close" data-bs-dismiss="modal">${buttonText}</button>
+//                 </div>
+//             </div>
+//         </div>
+//     `;
 
-    document.body.appendChild(modal);
-    return modal;
-}
+//     document.body.appendChild(modal);
+//     return modal;
+// }
 
-function buildLaunchAlertLauncher(config) {
-    const existingLauncher = document.getElementById('launchAlertLauncher');
-    if (existingLauncher) return existingLauncher;
+// function buildLaunchAlertLauncher(config) {
+//     const existingLauncher = document.getElementById('launchAlertLauncher');
+//     if (existingLauncher) return existingLauncher;
 
-    const launcher = document.createElement('button');
-    launcher.type = 'button';
-    launcher.id = 'launchAlertLauncher';
-    launcher.className = 'launch-alert-launcher';
-    launcher.setAttribute('aria-label', 'Reopen notice');
-    launcher.title = config.title || 'Important Notice';
-    launcher.innerHTML = `
-        <i class="bi bi-pin-angle-fill" aria-hidden="true"></i>
-        <span>Recruitment Notice</span>
-    `;
+//     const launcher = document.createElement('button');
+//     launcher.type = 'button';
+//     launcher.id = 'launchAlertLauncher';
+//     launcher.className = 'launch-alert-launcher';
+//     launcher.setAttribute('aria-label', 'Reopen notice');
+//     launcher.title = config.title || 'Important Notice';
+//     launcher.innerHTML = `
+//         <i class="bi bi-pin-angle-fill" aria-hidden="true"></i>
+//         <span>Recruitment Notice</span>
+//     `;
 
-    document.body.appendChild(launcher);
-    return launcher;
-}
+//     document.body.appendChild(launcher);
+//     return launcher;
+// }
 
-function initializeLaunchAlertMinimizeBehavior(modalElement, modal, config) {
-    const launcher = buildLaunchAlertLauncher(config);
-    if (modalElement.dataset.minimizeReady === 'true') return launcher;
+// function initializeLaunchAlertMinimizeBehavior(modalElement, modal, config) {
+//     const launcher = buildLaunchAlertLauncher(config);
+//     if (modalElement.dataset.minimizeReady === 'true') return launcher;
 
-    const hideLauncher = () => launcher.classList.remove('is-visible');
-    const showLauncher = () => launcher.classList.add('is-visible');
+//     const hideLauncher = () => launcher.classList.remove('is-visible');
+//     const showLauncher = () => launcher.classList.add('is-visible');
 
-    launcher.addEventListener('click', () => {
-        hideLauncher();
-        modal.show();
-    });
+//     launcher.addEventListener('click', () => {
+//         hideLauncher();
+//         modal.show();
+//     });
 
-    modalElement.addEventListener('show.bs.modal', hideLauncher);
-    modalElement.addEventListener('hidden.bs.modal', showLauncher);
-    modalElement.dataset.minimizeReady = 'true';
-    return launcher;
-}
+//     modalElement.addEventListener('show.bs.modal', hideLauncher);
+//     modalElement.addEventListener('hidden.bs.modal', showLauncher);
+//     modalElement.dataset.minimizeReady = 'true';
+//     return launcher;
+// }
 
-function wasLaunchAlertShown(storageKey) {
-    try {
-        return window.sessionStorage.getItem(storageKey) === 'shown';
-    } catch (error) {
-        console.warn('Session storage unavailable for launch alert state:', error);
-        return false;
-    }
-}
+// function wasLaunchAlertShown(storageKey) {
+//     try {
+//         return window.sessionStorage.getItem(storageKey) === 'shown';
+//     } catch (error) {
+//         console.warn('Session storage unavailable for launch alert state:', error);
+//         return false;
+//     }
+// }
 
-function wasPersistentLaunchAlertShown(storageKey) {
-    try {
-        return window.localStorage.getItem(storageKey) === 'shown';
-    } catch (error) {
-        console.warn('Local storage unavailable for launch alert state:', error);
-        return false;
-    }
-}
+// function wasPersistentLaunchAlertShown(storageKey) {
+//     try {
+//         return window.localStorage.getItem(storageKey) === 'shown';
+//     } catch (error) {
+//         console.warn('Local storage unavailable for launch alert state:', error);
+//         return false;
+//     }
+// }
 
-function markLaunchAlertShown(storageKey) {
-    try {
-        window.sessionStorage.setItem(storageKey, 'shown');
-    } catch (error) {
-        console.warn('Unable to persist launch alert state:', error);
-    }
-}
+// function markLaunchAlertShown(storageKey) {
+//     try {
+//         window.sessionStorage.setItem(storageKey, 'shown');
+//     } catch (error) {
+//         console.warn('Unable to persist launch alert state:', error);
+//     }
+// }
 
-function markPersistentLaunchAlertShown(storageKey) {
-    try {
-        window.localStorage.setItem(storageKey, 'shown');
-    } catch (error) {
-        console.warn('Unable to persist launch alert state in local storage:', error);
-    }
-}
+// function markPersistentLaunchAlertShown(storageKey) {
+//     try {
+//         window.localStorage.setItem(storageKey, 'shown');
+//     } catch (error) {
+//         console.warn('Unable to persist launch alert state in local storage:', error);
+//     }
+// }
 
-function shouldShowLaunchAlert(displayMode, storageKey) {
-    if (displayMode === 'always') {
-        return true;
-    }
+// function shouldShowLaunchAlert(displayMode, storageKey) {
+//     if (displayMode === 'always') {
+//         return true;
+//     }
 
-    if (displayMode === 'persistent') {
-        return !wasPersistentLaunchAlertShown(storageKey);
-    }
+//     if (displayMode === 'persistent') {
+//         return !wasPersistentLaunchAlertShown(storageKey);
+//     }
 
-    return !wasLaunchAlertShown(storageKey);
-}
+//     return !wasLaunchAlertShown(storageKey);
+// }
 
-function markLaunchAlertState(displayMode, storageKey) {
-    if (displayMode === 'persistent') {
-        markPersistentLaunchAlertShown(storageKey);
-        return;
-    }
+// function markLaunchAlertState(displayMode, storageKey) {
+//     if (displayMode === 'persistent') {
+//         markPersistentLaunchAlertShown(storageKey);
+//         return;
+//     }
 
-    if (displayMode !== 'always') {
-        markLaunchAlertShown(storageKey);
-    }
-}
+//     if (displayMode !== 'always') {
+//         markLaunchAlertShown(storageKey);
+//     }
+// }
 
-function isHomePage() {
-    // URL paths vary on GitHub Pages; the hero placeholder exists only on the homepage.
-    return Boolean(document.getElementById('hero-placeholder'));
-}
+// function isHomePage() {
+//     // URL paths vary on GitHub Pages; the hero placeholder exists only on the homepage.
+//     return Boolean(document.getElementById('hero-placeholder'));
+// }
 
-async function showLaunchAlertOncePerSession() {
-    try {
-        if (!isHomePage()) return;
+// async function showLaunchAlertOncePerSession() {
+//     try {
+//         if (!isHomePage()) return;
 
-        const config = await loadLaunchAlertConfig();
-        if (!config?.enabled) return;
+//         const config = await loadLaunchAlertConfig();
+//         if (!config?.enabled) return;
 
-        const storageKey = config.storageKey || 'ceododa-launch-alert';
-        const displayMode = config.displayMode || 'session';
-        const autoShow = shouldShowLaunchAlert(displayMode, storageKey);
+//         const storageKey = config.storageKey || 'ceododa-launch-alert';
+//         const displayMode = config.displayMode || 'session';
+//         const autoShow = shouldShowLaunchAlert(displayMode, storageKey);
 
-        const modalElement = buildLaunchAlertModal(config);
+//         const modalElement = buildLaunchAlertModal(config);
 
-        if (!window.bootstrap?.Modal) {
-            if (!autoShow) return;
-            markLaunchAlertState(displayMode, storageKey);
-            modalElement.classList.add('show');
-            modalElement.style.display = 'block';
-            document.body.classList.add('modal-open');
-            return;
-        }
+//         if (!window.bootstrap?.Modal) {
+//             if (!autoShow) return;
+//             markLaunchAlertState(displayMode, storageKey);
+//             modalElement.classList.add('show');
+//             modalElement.style.display = 'block';
+//             document.body.classList.add('modal-open');
+//             return;
+//         }
 
-        const modal = new window.bootstrap.Modal(modalElement, {
-            backdrop: 'static',
-            keyboard: true
-        });
-        const launcher = initializeLaunchAlertMinimizeBehavior(modalElement, modal, config);
+//         const modal = new window.bootstrap.Modal(modalElement, {
+//             backdrop: 'static',
+//             keyboard: true
+//         });
+//         const launcher = initializeLaunchAlertMinimizeBehavior(modalElement, modal, config);
 
-        if (autoShow) {
-            markLaunchAlertState(displayMode, storageKey);
-            modal.show();
-        } else {
-            launcher.classList.add('is-visible');
-        }
-    } catch (error) {
-        console.error('Error showing launch alert:', error);
-    }
-}
+//         if (autoShow) {
+//             markLaunchAlertState(displayMode, storageKey);
+//             modal.show();
+//         } else {
+//             launcher.classList.add('is-visible');
+//         }
+//     } catch (error) {
+//         console.error('Error showing launch alert:', error);
+//     }
+// }
 
 // Global instance
 const componentLoader = new ComponentLoader();

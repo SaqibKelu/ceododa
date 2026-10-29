@@ -68,7 +68,7 @@ a:focus, button:focus {
     outline-offset: 3px;
 }
 
-/* Launch alert modal */
+Launch alert modal
 .launch-alert-modal .modal-dialog {
     max-width: 760px;
 }
